@@ -1,0 +1,15 @@
+name: mamba4ts
+channels:
+  - defaults
+dependencies:
+  - python=3.8.12
+  - pip
+  - pip:
+    - coverage
+    - flake8
+    - isort
+    - black==23.7.0 
+    - flake8-bugbear
+    - flake8-comprehensions
+    - pre-commit>=2.9.3
+    - docformatter
