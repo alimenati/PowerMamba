@@ -3,7 +3,7 @@ This repo contains the code for "GridTime: A Deep State Space Model and Comprehe
 The required packages can be installed and activated by:
 ```
 conda env create -f environment.yml
-conda activate 
+conda activate mamba4ts
 ```
 ## Experiments
 
