@@ -100,6 +100,7 @@ if __name__ == '__main__':
     parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
     parser.add_argument('--n1',type=int,default=256,help='First Embedded representation')
     parser.add_argument('--n2',type=int,default=128,help='Second Embedded representation')
+    parser.add_argument('--n_embed',type=int,default=256,help='Embedding dimension for GridTimes')
 
 
     # METHOD
@@ -163,11 +164,8 @@ if __name__ == '__main__':
 
     print('Args in experiment:')
     print(args)
-    slurm_id = os.getenv('SLURM_JOB_ID', 'no_slurm_id') ##remove!
-    
-    print(slurm_id)
 
-    Exp = Exp_Main # Exp_Arima #
+    Exp = Exp_Main
 
     if args.is_training:
         for ii in range(args.itr):
@@ -182,6 +180,7 @@ if __name__ == '__main__':
                 args.pred_len,
                 args.n1,
                 args.n2,
+                args.n_embed,
                 args.dropout,
                 args.ch_ind,
                 args.revin,
@@ -189,15 +188,12 @@ if __name__ == '__main__':
                 args.d_state,
                 args.dconv,
                 args.e_fact,
-                slurm_id,
             )
             print(setting)
 
             exp = Exp(args)  # set experiments
-            if args.model != "Arima":
-                print('not Arima, Trainig: ')
-                print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
-                exp.train(setting)
+            print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
+            exp.train(setting)
 
             print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
             exp.test(setting)
@@ -219,6 +215,7 @@ if __name__ == '__main__':
                 args.pred_len,
                 args.n1,
                 args.n2,
+                args.n_embed,
                 args.dropout,
                 args.ch_ind,
                 args.revin,
@@ -231,4 +228,3 @@ if __name__ == '__main__':
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
         exp.test(setting, test=1)
         torch.cuda.empty_cache()
-        
