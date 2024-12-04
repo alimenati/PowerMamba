@@ -1,1 +1,4 @@
-Run the scripts using "sh directory_to_scripts/scripts/script_name.sh"
+Run the scripts using:
+```
+sh directory_to_scripts/scripts/script_name.sh
+```
