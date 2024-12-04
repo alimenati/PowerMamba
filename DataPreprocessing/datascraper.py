@@ -10,8 +10,8 @@ def get_access_token():
     }
     data = {
         'grant_type': 'password',
-        'username': 'username',
-        'password': 'password',
+        'username': 'username', #username here
+        'password': 'password', #password here
         'response_type': 'id_token',
         'scope': 'scope',
         'client_id': 'client_id'
