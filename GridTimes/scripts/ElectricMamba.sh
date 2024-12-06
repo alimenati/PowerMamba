@@ -54,7 +54,7 @@ done
 
 
 
-model_name=GridTimes
+model_name=ElectricMamba
 features=Mm
 c_out=22
 include_pred=0
