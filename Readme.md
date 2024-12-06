@@ -1,5 +1,6 @@
-This repo contains the code for "GridTime: A Deep State Space Model and Comprehensive Benchmark for AI-Driven Multivariate Time Series Prediction in Electric Grids".
-![ElectricMamba](emamba.png)
+This repo contains the code for "ElectricMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Grids".
+
+
 <img src="ElectricMamba.png" alt="ElectricMamba" width="50%">
 
 ## Getting started
