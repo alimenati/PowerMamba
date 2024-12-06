@@ -9,7 +9,8 @@ The required packages can be installed and activated by:
 conda env create -f environment.yml
 conda activate mamba4ts
 ```
-## Experiments
+## About this Repo
+
 
 # Maintainers
 * [Ali Menati](github.com/alimenati)
