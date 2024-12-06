@@ -2,7 +2,6 @@ import argparse
 import os
 import torch
 from exp.exp_main import Exp_Main
-from exp.exp_arima import Exp_Arima
 import random
 import numpy as np
 import logging
