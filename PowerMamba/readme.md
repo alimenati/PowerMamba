@@ -20,9 +20,6 @@ For each dataset, you can define a dictionary which contains the following infor
         <p>An Example of how to incorporate the external prediction. For more information, please see the paper.</p>
     </div>
 </div>
-<div style="text-align: center;">
-  ![Alt Text](time_series.png)
-</div>
 
 
 - **`Col_info_dict`**: Useful for reporting partial MSE. If you have columns that can be categorized (e.g., they are all prices for different regions or loads for different regions), specify them in this dictionary. The format is:
