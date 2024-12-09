@@ -7,8 +7,10 @@ The model can be summerized in the following image:
 </div>
 our main reult can be shown here:
 <div style="text-align: center;">
-    <img src="performance.png" alt="Image2" style="width:200px; height:200px;">
+    <img src="performance.png" alt="Image2" style="width:200px; height:400px;">
 </div>
+
+
 ## Getting Started
 
 To set up the required environment, follow these steps:
