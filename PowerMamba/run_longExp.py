@@ -6,27 +6,29 @@ import random
 import numpy as np
 import logging
 from fractions import Fraction
+import importlib
+import pandas as pd
 
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def parse_energy_data(energy_data_str):
-    energy_data_dict = {}
-    items = energy_data_str.split(',')
-    for item in items:
-        key, value1, value2 = item.split(':')
-        energy_data_dict[key] = [int(value1), int(value2)]
-    return energy_data_dict
+# def parse_energy_data(energy_data_str):
+#     energy_data_dict = {}
+#     items = energy_data_str.split(',')
+#     for item in items:
+#         key, value1, value2 = item.split(':')
+#         energy_data_dict[key] = [int(value1), int(value2)]
+#     return energy_data_dict
 
-def parse_col_info_data(col_info_data_str):
-    data_dict = {}
-    items = col_info_data_str.split(',')
-    for item in items:
-        key, value1, value2 = item.split(':')
-        value1 = int(value1)
-        value2 = int(value2)
-        data_dict[key] = [value1, value2]
-    return data_dict
+# def parse_col_info_data(col_info_data_str):
+#     data_dict = {}
+#     items = col_info_data_str.split(',')
+#     for item in items:
+#         key, value1, value2 = item.split(':')
+#         value1 = int(value1)
+#         value2 = int(value2)
+#         data_dict[key] = [value1, value2]
+#     return data_dict
 
 
 if __name__ == '__main__':
@@ -99,7 +101,7 @@ if __name__ == '__main__':
     parser.add_argument('--pred_len', type=int, default=96, help='prediction sequence length')
     parser.add_argument('--n1',type=int,default=256,help='First Embedded representation')
     parser.add_argument('--n2',type=int,default=128,help='Second Embedded representation')
-    parser.add_argument('--n_embed',type=int,default=256,help='Embedding dimension for GridTimes')
+    parser.add_argument('--n_embed',type=int,default=256,help='Embedding dimension for PowerMamba')
 
 
     # METHOD
@@ -137,13 +139,20 @@ if __name__ == '__main__':
     parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
 
     parser.add_argument('--include_pred', type=int, default=0, help='any prediction in dataset?')
-    # parser.add_argument('--n_nonpred_col', type=int, default=26, help='n_nonpred_col')
+
+
+    
 
     args = parser.parse_args()
-    args.target = args.target.split(',')
-    args.project_dict = parse_energy_data(args.project_dict)
-    args.col_info_dict = parse_col_info_data(args.col_info_dict)
-
+    if args.features != 'S':
+        datapath = args.root_path+'/'+args.data_path
+        df = pd.read_csv(datapath)
+        args.target = df.columns[-args.c_out:].tolist()
+        
+    package_path = 'scripts.dictionaries'
+    dict_module = importlib.import_module(f'{package_path}.{args.data_path}'.replace('.csv', ''))
+    args.project_dict = dict_module.project_dict
+    args.col_info_dict = dict_module.col_info_dict
 
     # random seed
     fix_seed = args.random_seed
