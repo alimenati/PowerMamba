@@ -1,7 +1,7 @@
 This repo contains the code for "ElectricMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems".
 
 
-<img src="emamba.png" alt="ElectricMamba" width="50%">
+<img src="PowerMamba.png" alt="PowerMamba" width="50%">
 
 ## Getting started
 The required packages can be installed and activated by:
