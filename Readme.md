@@ -2,7 +2,7 @@
 
 This repository contains the code and resources for the research project *"PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems."*
 The model can be summerized in the following image:
-![small Image](model.png){: width="150" height="150"}
+<img src="model.png" alt="small Image" style="width:150px; height:150px;">
 
 ## Getting Started
 
