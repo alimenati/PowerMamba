@@ -12,25 +12,6 @@ import pandas as pd
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# def parse_energy_data(energy_data_str):
-#     energy_data_dict = {}
-#     items = energy_data_str.split(',')
-#     for item in items:
-#         key, value1, value2 = item.split(':')
-#         energy_data_dict[key] = [int(value1), int(value2)]
-#     return energy_data_dict
-
-# def parse_col_info_data(col_info_data_str):
-#     data_dict = {}
-#     items = col_info_data_str.split(',')
-#     for item in items:
-#         key, value1, value2 = item.split(':')
-#         value1 = int(value1)
-#         value2 = int(value2)
-#         data_dict[key] = [value1, value2]
-#     return data_dict
-
-
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Time Series Forecasting')
 
@@ -139,9 +120,6 @@ if __name__ == '__main__':
     parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
 
     parser.add_argument('--include_pred', type=int, default=0, help='any prediction in dataset?')
-
-
-    
 
     args = parser.parse_args()
     if args.features != 'S':
