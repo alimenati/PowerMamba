@@ -7,7 +7,16 @@ To run the experiments, you need to use the scripts located in the `scripts` fol
 
 ### Some Details of the Scripts:
 - **Model Name** and **Dataset Directory**: These are the most critical elements inside each script. The features can be `M` which considers all the data and predicts for it; `s` will only consider the targeted data; and `Mm` will only predict for the last `c_out` column. If there is prediction data in your dataset, you should set `include_pred = 1`. The rest of the script contains hyperparameters.
+#### Dictionaries Directory Inside the Scripts Directory:
+For each dataset, you can define a dictionary which contains the following information:
+- **`project_dict`**: If you have predictions for some of your columns, indicate it here. The key in the dictionary is the column name, and the values represent:
+  - The historical data for that column.
+  - The first column number where predictions start for that specific column. You can leave this as `{}` if you are not incorporating external predictions.
 
+- **`Col_info_dict`**: Useful for reporting partial MSE. If you have columns that can be categorized (e.g., they are all prices for different regions or loads for different regions), specify them in this dictionary. The format is:
+  - The first value is the index where that group of columns starts.
+  - The second value is the number of columns in that group.
+  - Ensure that columns belonging to the same group are adjacent to each other. If you don’t want partial MSE, leave it as `{}`.
 
 ### Running Scripts:
 
