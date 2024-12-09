@@ -137,7 +137,7 @@ if __name__ == '__main__':
     parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
 
     parser.add_argument('--include_pred', type=int, default=0, help='any prediction in dataset?')
-    parser.add_argument('--n_nonpred_col', type=int, default=26, help='n_nonpred_col')
+    # parser.add_argument('--n_nonpred_col', type=int, default=26, help='n_nonpred_col')
 
     args = parser.parse_args()
     args.target = args.target.split(',')
@@ -227,3 +227,4 @@ if __name__ == '__main__':
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
         exp.test(setting, test=1)
         torch.cuda.empty_cache()
+        
