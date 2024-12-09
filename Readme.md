@@ -10,8 +10,8 @@ To set up the required environment, follow these steps:
 conda env create -f environment.yml
 conda activate mamba4ts
 
-Repository Overview
--------------------
+## Repository Overview
+
 
 - **`Data Preprocessing`**: This folder includes an example script demonstrating how to gather data from the ERCOT website using a custom data scraper.
 - **`PowerMamba`**: Contains the implementation of the proposed PowerMamba model along with baseline models.
