@@ -15,10 +15,11 @@ For each dataset, you can define a dictionary which contains the following infor
   - For example, in the following image, the first number in the dictionary should be the column number for the wind column, and the second one is the column number for the first prediction column, which corresponds to '1h pred'.
 
 <div style="text-align: center; margin-top: 20px;">
-    <img src="time_series.png" alt="Performance Results" style="width:400px; height:400px;">
-    <p>An Example of how to incorporate the external prediction. For more information, please see the paper.</p>
+    <div style="display: inline-block; text-align: center;">
+        <img src="time_series.png" alt="Performance Results" style="width:400px; height:200px;">
+        <p>An Example of how to incorporate the external prediction. For more information, please see the paper.</p>
+    </div>
 </div>
-
 
 
 - **`Col_info_dict`**: Useful for reporting partial MSE. If you have columns that can be categorized (e.g., they are all prices for different regions or loads for different regions), specify them in this dictionary. The format is:
