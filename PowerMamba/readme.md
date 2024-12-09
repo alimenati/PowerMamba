@@ -1,4 +1,3 @@
-# How to Run:
 
 The main script to be executed for running experiments is `run_longexp.py`. It coordinates the execution of various models and their hyperparameters across different datasets.
 
