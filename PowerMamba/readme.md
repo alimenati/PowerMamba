@@ -7,7 +7,7 @@ To run the experiments, you need to use the scripts located in the `scripts` fol
 
 ### Some Details of the Scripts:
 - **Model Name** and **Dataset Directory**: These are the most critical elements inside each script. The features can be `M` which considers all the data and predicts for it; `s` will only consider the targeted data; and `Mm` will only predict for the last `c_out` column. If there is prediction data in your dataset, you should set `include_pred = 1`. The rest of the script contains hyperparameters.
-#### Dictionaries Directory Inside the Scripts Directory:
+#### `dictionaries` Directory Inside the `scripts` Directory:
 For each dataset, you can define a dictionary which contains the following information:
 - **`project_dict`**: If you have predictions for some of your columns, indicate it here. The key in the dictionary is the column name, and the values represent:
   - The historical data for that column.
