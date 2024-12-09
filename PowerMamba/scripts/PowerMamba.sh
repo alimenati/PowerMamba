@@ -54,7 +54,7 @@ done
 
 
 
-model_name=ElectricMamba
+model_name=PowerMamba
 features=Mm
 c_out=22
 include_pred=0
