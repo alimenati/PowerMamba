@@ -3,7 +3,7 @@
 
 This repository contains the code and resources for the research project *"PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems."*
 
-<div style="display: flex; justify-content: center; gap: 20px;">
+<div style="display: flex; justify-content: space-around; align-items: center;">
     <div style="text-align: center;">
         <img src="model.png" alt="PowerMamba Model" style="width:200px; height:200px;">
         <p>PowerMamba Model: A Deep State Space Model for time series prediction in electric power systems.</p>
