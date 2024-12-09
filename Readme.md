@@ -1,11 +1,14 @@
+
 # PowerMamba: A Deep State Space Model and Benchmark for Time Series Prediction in Electric Power Systems
 
 This repository contains the code and resources for the research project *"PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems."*
-The model can be summerized in the following image:
+
+The model can be summarized in the following image:
 <div style="text-align: center;">
     <img src="model.png" alt="small Image" style="width:400px; height:400px;">
 </div>
-our main reult can be shown here:
+
+Our main result can be shown here:
 <div style="text-align: center;">
     <img src="performance.png" alt="Image2" style="width:400px; height:200px;">
 </div>
