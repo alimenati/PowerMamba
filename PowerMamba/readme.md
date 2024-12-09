@@ -2,7 +2,7 @@
 
 The main script to be executed for running experiments is `run_longexp.py`. It coordinates the execution of various models and their hyperparameters across different datasets.
 
-## Using Scripts in the `scripts` Directory
+## How to use the scripts
 
 To run the experiments, you need to use the scripts located in the `scripts` folder. These scripts specify the parameters and configurations required for each model.
 
