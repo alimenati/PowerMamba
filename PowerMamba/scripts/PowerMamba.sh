@@ -19,7 +19,9 @@ fi
 declare -A project_dict_=(['COAST']='241 97' ['EAST']='242 49' ['FWEST']='243 73' ['NORTH']='244 1'
                          ['NCENT']='245 25' ['SOUTH']='246 169' ['SCENT']='247 121' ['WEST']='248 145'
                          ['SOLAR']='254 193' ['WIND']='253 217')
-
+# declare -A project_dict_=(['COAST']='1681 673' ['EAST']='1682 337' ['FWEST']='1683 505' ['NORTH']='1684 1'
+#                          ['NCENT']='1685 169' ['SOUTH']='1686 1177' ['SCENT']='1687 841' ['WEST']='1688 1009'
+#                          ['SOLAR']='1694 1345' ['WIND']='1693 1513')
 project_dict=""
 keys=(${!project_dict_[@]})
 for i in "${!keys[@]}"; do
@@ -57,13 +59,11 @@ done
 model_name=PowerMamba
 features=Mm
 c_out=22
-include_pred=0
-n_nonpred_col=22
-
+include_pred=1
 target_name='COAST','EAST','FWEST','NORTH','NCENT','SOUTH','SCENT','WEST','REGDN','REGUP','RRS','NSPIN','WIND_ACTUAL_SYSTEM_WIDE','SOLAR_ACTUAL_SYSTEM_WIDE','LZ_AEN','LZ_CPS','LZ_HOUSTON','LZ_LCRA','LZ_NORTH','LZ_RAYBN','LZ_SOUTH','LZ_WEST' 
 
 root_path_name=../data/price
-data_path_name=price.csv
+data_path_name=price_2019_2023.csv
 
 model_id_name=price
 data_name=custom
@@ -86,13 +86,12 @@ lradjval='5'
 learning_rate=0.001
 
 
-for pred_len in 24 48 72 96 168
+for pred_len in 24
 do
 
 start_time=$(date "+%Y%m%d_%H%M%S")
-log_file="logs/LongForecasting/${model_name}_${model_id_name}_${seq_len}_${pred_len}_${fc_drop}_${batch_size}_${fc_dropout}_${kernel_size}_${rin}_${start_time}.log"
+log_file="logs/LongForecasting/${model_name}_${model_id_name}_${seq_len}_${pred_len}_${fc_drop}_${batch_size}_${fc_dropout}_${kernel_size}_${start_time}.log"
 
-echo "Start Time: $(date "+%Y-%m-%d %H:%M:%S")" > $log_file
 
 python -u run_longExp.py \
 --random_seed $random_seed \
@@ -108,8 +107,8 @@ python -u run_longExp.py \
 --features $features \
 --seq_len $seq_len \
 --pred_len $pred_len \
---enc_in $n_nonpred_col \
---dec_in $n_nonpred_col \
+--enc_in $c_out \
+--dec_in $c_out \
 --c_out $c_out \
 --project_dict $project_dict \
 --col_info_dict $col_info_dict \
@@ -126,11 +125,10 @@ python -u run_longExp.py \
 --kernel_size $kernel_size \
 --train_epochs 1 \
 --lradj $lradjval \
+--n_embed $n_embed \
 --include_pred $include_pred \
---n_nonpred_col $n_nonpred_col \
---n_pred_col $c_out \
---itr 1 --batch_size $batch_size --learning_rate $learning_rate >> $log_file
+--itr 1 \
+--batch_size $batch_size \
+--learning_rate $learning_rate >> $log_file
 
-# Log end time in the file
-echo "End Time: $(date "+%Y-%m-%d %H:%M:%S")" >> $log_file
 done
