@@ -1,6 +1,6 @@
 from data_provider.data_factory import data_provider
 from exp.exp_basic import Exp_Basic
-from models import TimeMachine, ElectricMamba, Autoformer, Transformer, DLinear, Linear, NLinear, PatchTST, iTransformer , Informer, TimesNet
+from models import PowerMamba, TimeMachine, Autoformer, Transformer, DLinear, PatchTST, iTransformer, TimesNet
 from utils.tools import EarlyStopping, adjust_learning_rate, visual, test_params_flop
 from utils.metrics import metric
 
@@ -27,13 +27,9 @@ class Exp_Main(Exp_Basic):
     def _build_model(self):
         model_dict = {
             'TimeMachine':TimeMachine,
-            'ElectricMamba': ElectricMamba,
+            'PowerMamba': PowerMamba,
             'Autoformer': Autoformer,
-            'Transformer': Transformer,
-            'Informer': Informer,
             'DLinear': DLinear,
-            'NLinear': NLinear,
-            'Linear': Linear,
             'PatchTST': PatchTST,
             'iTransformer': iTransformer,
             'TimesNet': TimesNet,
@@ -71,8 +67,8 @@ class Exp_Main(Exp_Basic):
         with torch.no_grad():
             for i, (batch_x, batch_y, batch_x_mark, batch_y_mark) in enumerate(vali_loader):
                 if self.args.include_pred == 0:
-                    batch_x = batch_x[: , : , -22:].float().to(self.device)
-                    batch_y = batch_y[: , : , -22:].float()
+                    batch_x = batch_x[: , : , -self.args.c_out:].float().to(self.device)
+                    batch_y = batch_y[: , : , -self.args.c_out:].float()
                 else:
                     batch_x = batch_x.float().to(self.device)
                     batch_y = batch_y.float()
@@ -106,7 +102,7 @@ class Exp_Main(Exp_Basic):
                 if self.args.features == 'MS':
                     f_dim = -1
                 elif self.args.features == 'Mm':
-                    f_dim = -self.args.n_pred_col
+                    f_dim = -self.args.c_out
                 else: 
                     f_dim = 0
                     
@@ -179,8 +175,8 @@ class Exp_Main(Exp_Basic):
                 iter_count += 1
                 model_optim.zero_grad()
                 if self.args.include_pred == 0:
-                    batch_x = batch_x[: , : , -22:].float().to(self.device)
-                    batch_y = batch_y[: , : , -22:].float().to(self.device)
+                    batch_x = batch_x[: , : , -self.args.c_out:].float().to(self.device)
+                    batch_y = batch_y[: , : , -self.args.c_out:].float().to(self.device)
                 else:
                     batch_x = batch_x.float().to(self.device)
                     batch_y = batch_y.float().to(self.device)
@@ -208,7 +204,7 @@ class Exp_Main(Exp_Basic):
                         if self.args.features == 'MS':
                             f_dim = -1
                         elif self.args.features == 'Mm':
-                            f_dim = -self.args.n_pred_col
+                            f_dim = -self.args.c_out
                         else: 
                             f_dim = 0
                             
@@ -230,7 +226,7 @@ class Exp_Main(Exp_Basic):
                     if self.args.features == 'MS':
                         f_dim = -1
                     elif self.args.features == 'Mm':
-                        f_dim = -self.args.n_pred_col
+                        f_dim = -self.args.c_out
                     else: 
                         f_dim = 0
 
@@ -310,13 +306,6 @@ class Exp_Main(Exp_Basic):
             preds_sv[key] = []
             trues_sv[key] = []
             
-        # preds_er = {}
-        # trues_er = {}
-        # ercot_er = {}
-        # for key in self.args.project_dict:
-        #     preds_er[key] = []
-        #     trues_er[key] = []
-        #     ercot_er[key] = []
         
         inputx = []
         folder_path = './test_results/' + setting + '/'
@@ -328,12 +317,12 @@ class Exp_Main(Exp_Basic):
             for i, (batch_x, batch_y, batch_x_mark, batch_y_mark) in enumerate(test_loader):
 
                 if self.args.include_pred == 0:
-                    ercot_data_x = batch_x[: , : , : -22]
-                    batch_x = batch_x[: , : , -22:]
+                    ercot_data_x = batch_x[: , : , : -self.args.c_out]
+                    batch_x = batch_x[: , : , -self.args.c_out:]
                     batch_x = batch_x.float().to(self.device)
                     
-                    ercot_data_y = batch_y[: , : , : -22]
-                    batch_y = batch_y[: , : , -22:]
+                    ercot_data_y = batch_y[: , : , : -self.args.c_out]
+                    batch_y = batch_y[: , : , -self.args.c_out:]
                     batch_y = batch_y.float().to(self.device)
                 else:
                     batch_x = batch_x.float().to(self.device)
@@ -370,7 +359,7 @@ class Exp_Main(Exp_Basic):
                 if self.args.features == 'MS':
                     f_dim = -1
                 elif self.args.features == 'Mm':
-                    f_dim = -self.args.n_pred_col
+                    f_dim = -self.args.c_out
                 else: 
                     f_dim = 0
                     
@@ -402,19 +391,7 @@ class Exp_Main(Exp_Basic):
 
                     preds_sv[key].append(pred)
                     trues_sv[key].append(true)
-                    
-                # for key, val in self.args.project_dict.items():
-                #     ercot = (ercot_data_y[: , -self.args.pred_len-1 , val[1]-1:val[1]-1+self.args.pred_len]).detach().cpu().numpy()
-                #     true = (batch_y[:, -self.args.pred_len:, val[0]-1-240].to(self.device)).detach().cpu().numpy()
-                #     pred = (outputs[:, -self.args.pred_len:, val[0]-1-240]).detach().cpu().numpy()
 
-                #     preds_er[key].append(pred)
-                #     trues_er[key].append(true)
-                #     ercot_er[key].append(ercot)
-                #     print('key: ' , key)
-                #     print(ercot[0 , :])
-                #     print(true[0 , :])
-                #     print(pred[0 , :])
                     
         if self.args.test_flop:
             test_params_flop((batch_x.shape[1],batch_x.shape[2]))
@@ -443,12 +420,9 @@ class Exp_Main(Exp_Basic):
         f.write('\n')
         f.close()
         temp_df = pd.DataFrame()
-        temp_df['Seed']=[self.args.random_seed]
         temp_df['Model']=[self.args.model]
         temp_df['seq_len']=[self.args.seq_len]
-        temp_df['label_len']=[self.args.label_len]
         temp_df['pred_len']=[self.args.pred_len]
-        temp_df['train_epochs']=[self.args.train_epochs]
         temp_df['batch']=[self.args.batch_size]
         temp_df['LR']=[self.args.learning_rate]
         temp_df['top_k']=[self.args.top_k]
@@ -463,8 +437,17 @@ class Exp_Main(Exp_Basic):
         temp_df['kernel_size']=[self.args.kernel_size]
         temp_df['lradj']=[self.args.lradj]
 
-        temp_df['MSE']=[mse]
-        temp_df['MAE']=[mae]
+        temp_df['MSE total']=[mse]
+        temp_df['MAE total']=[mae]
+
+        for key , val in self.df_dict.items():
+            preds_tmp = np.array(preds_sv[key])
+            trues_tmp = np.array(trues_sv[key])
+            preds_tmp = preds_tmp.reshape(-1, preds_tmp.shape[-2], preds_tmp.shape[-1])
+            trues_tmp = trues_tmp.reshape(-1, trues_tmp.shape[-2], trues_tmp.shape[-1])
+            mae, mse, rmse, mape, mspe, rse, corr = metric(preds_tmp, trues_tmp)
+            temp_df['MSE'+f' {key}'] = mse
+            temp_df['MAE'+f' {key}'] = mae
 
 
         if not os.path.exists('./csv_results/'+'result_'+self.args.data_path):
@@ -474,33 +457,9 @@ class Exp_Main(Exp_Basic):
             result_df = pd.concat([result_df,temp_df],ignore_index=True)
             result_df.to_csv('./csv_results/'+'result_'+self.args.data_path, index=False)
 
-        # np.save(folder_path + 'metrics.npy', np.array([mae, mse, rmse, mape, mspe,rse, corr]))
         np.save(folder_path + 'pred.npy', preds)
         np.save(folder_path + 'true.npy', trues)
         np.save(folder_path + 'x.npy', inputx)
-
-        for key , val in self.df_dict.items():
-            preds_tmp = np.array(preds_sv[key])
-            trues_tmp = np.array(trues_sv[key])
-            preds_tmp = preds_tmp.reshape(-1, preds_tmp.shape[-2], preds_tmp.shape[-1])
-            trues_tmp = trues_tmp.reshape(-1, trues_tmp.shape[-2], trues_tmp.shape[-1])
-            mae, mse, rmse, mape, mspe, rse, corr = metric(preds_tmp, trues_tmp)
-            print(f'FOR {key}: mse:{mse}, mae:{mae}, rse:{rse}')
-        # print('comparing with ERCOT: ')
-        
-        # for key , val in self.args.project_dict.items():
-        #     preds_tmp = np.array(preds_er[key])
-        #     trues_tmp = np.array(trues_er[key])
-        #     ercot_tmp = np.array(ercot_er[key])
-            
-        #     preds_tmp = preds_tmp.reshape(-1, preds_tmp.shape[-2], preds_tmp.shape[-1])
-        #     trues_tmp = trues_tmp.reshape(-1, trues_tmp.shape[-2], trues_tmp.shape[-1])
-        #     ercot_tmp = ercot_tmp.reshape(-1, ercot_tmp.shape[-2], ercot_tmp.shape[-1])
-            
-        #     mae, mse, rmse, mape, mspe, rse, corr = metric(preds_tmp, trues_tmp)
-        #     print(f'For our model and {key}: mse:{mse}, mae:{mae}, rse:{rse}')
-        #     mae, mse, rmse, mape, mspe, rse, corr = metric(ercot_tmp, trues_tmp)
-        #     print(f'For ERCOT model and {key}: mse:{mse}, mae:{mae}, rse:{rse}')
             
         return
 
