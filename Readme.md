@@ -9,7 +9,17 @@ We release a comprehensive dataset for the Electric Reliability Council of Texas
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
 
-PowerMamba outperforms current benchmarks in all prediction tasks. 
+
+
+PowerMamba outperforms current benchmarks in all prediction tasks. We propose a time series processing block that seamlessly integrates high-resolution external forecasts into our models and other sequence-to-sequence frameworks. This module improves forecasting capabilities without substantially increasing the model size or diminishing the resolution and accuracy of external forecasts. We evaluate
+its effectiveness by considering two scenarios: first, we
+train with historical data alone, and then we incorporate
+external forecasts and compare the results. Our findings
+indicate that integrating external predictions for specific
+channels significantly enhances prediction accuracy, even
+for time series without direct external forecasts
+
+
 
 <img src="pics/without_pred.png" alt="Prediction results without external forecasts">
 <img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
