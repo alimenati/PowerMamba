@@ -84,27 +84,27 @@ class Model(torch.nn.Module):
             
             
     def forward(self, x):
-        if self.configs.include_pred==1:
-            zeros = x[:, -self.configs.pred_len:, :]
-            x_pred = torch.cat((x, zeros), dim=1)
-            k=0
-            for key, value in self.project_dict.items():
-                k=k+1
-                proj_to = value[0]-1 
-                proj_from = value[1]-1 
-                data = x[:, -1, proj_from:proj_from + self.configs.pred_len]
-                x_pred[:, -self.configs.pred_len:, proj_to] = data
-                x_pred[:, :self.configs.seq_len, -self.configs.c_out-k]=x_pred[:, -self.configs.seq_len:, proj_to]
-                x_pred[:, -self.configs.pred_len:, -self.configs.c_out-k]=data
+         if self.configs.include_pred==1:
+             zeros = x[:, -self.configs.pred_len:, :]
+             x_pred = torch.cat((x, zeros), dim=1)
+             k=0
+             for key, value in self.project_dict.items():
+                 k=k+1
+                 proj_to = value[0]-1 
+                 proj_from = value[1]-1 
+                 data = x[:, -1, proj_from:proj_from + self.configs.pred_len]
+                 x_pred[:, -self.configs.pred_len:, proj_to] = data
+                 x_pred[:, :self.configs.seq_len, -self.configs.c_out-k]=x_pred[:, -self.configs.seq_len:, proj_to]
+                 x_pred[:, -self.configs.pred_len:, -self.configs.c_out-k]=data
 
-            x = x_pred[: , : , -self.configs.c_out-self.num_new_col:]
-            x = self.revin_layer_enc(x, 'norm')
-            seasonal_init, trend_init = self.decompsition(x)
-            x= torch.cat([seasonal_init, trend_init], dim=1)
-            x = torch.permute(x, (0,2,1))
-            x = self.lin1(x)
-            x = torch.permute(x, (0,2,1))
-            x = self.revin_layer_enc(x, 'denorm')
+             x = x_pred[: , : , -self.configs.c_out-self.num_new_col:]
+             x = self.revin_layer_enc(x, 'norm')
+             seasonal_init, trend_init = self.decompsition(x)
+             x= torch.cat([seasonal_init, trend_init], dim=1)
+             x = torch.permute(x, (0,2,1))
+             x = self.lin1(x)
+             x = torch.permute(x, (0,2,1))
+             x = self.revin_layer_enc(x, 'denorm')
 
          if self.configs.revin==1:
              x=self.revin_layer(x,'norm')
