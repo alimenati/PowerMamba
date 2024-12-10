@@ -16,7 +16,7 @@ For each dataset, you can define a dictionary which contains the following infor
 
 <div style="text-align: center; margin-top: 20px;">
     <div style="display: inline-block; text-align: center;">
-        <img src="main/pics/time_series.png" alt="Performance Results" style="width:400px; height:400px;">
+        <img src="/main/pics/time_series.png" alt="Performance Results" style="width:400px; height:400px;">
         <p>An Example of how to incorporate the external prediction. For more information, please see the paper.</p>
     </div>
 </div>
