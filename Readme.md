@@ -103,8 +103,7 @@ We appreciate the following github repos very much for the valuable code base:
 
 ## Contact
 
-If you have any questions or concerns, please contact us: ynie@princeton.edu or nnguyen@us.ibm.com or submit an issue
-
+If you have any questions or concerns, please contact us: menati@tamu.edu or nnguyen@us.ibm.com or submit an issue
 
 
 ## Citation
