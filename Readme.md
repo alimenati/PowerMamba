@@ -35,8 +35,8 @@ prediction error is reduced by 7%, despite the absence of external price predict
 sizes, with context length L = 240 and no external predictions. **Right Figure**) The number of model parameters with and without
 external predictions, in log scale.
 
-    
-    <img src="pics/context.png" alt="at">
+<img src="pics/qualitative.png" alt="at">
+<img src="pics/context.png" alt="at">
 </div>
 
 
