@@ -36,11 +36,8 @@ prediction error is reduced by 7%, despite the absence of external price predict
 
 
 
-**Computational Efficiency:**
-PowerMamba enhances the average prediction error of TimeMachine by 7% while employing 43% fewer parameters,
-thereby highlighting its superiority over this state-of-the-art
-Mamba-based model. Furthermore, PowerMamba is considerably smaller than Transformer-based models, with 78% fewer
-parameters than the leading iTransformer.
+**Computational Efficiency:** As shwon below, PowerMamba is highly robust and it consistently outperforms other models in both short- and long-
+term predictions. We also compare the number of trainable parameters for all the baseline models.
 
 <div style="text-align: center; margin-top: 20px;">
     <img src="pics/parameters.png" alt="at">
@@ -49,7 +46,10 @@ parameters than the leading iTransformer.
 sizes, with context length L = 240 and no external predictions. **Right Figure**) The number of model parameters with and without
 external predictions, in log scale.
 
-
+PowerMamba enhances the average prediction error of TimeMachine by 7% while employing 43% fewer parameters,
+thereby highlighting its superiority over this state-of-the-art
+Mamba-based model. Furthermore, PowerMamba is considerably smaller than Transformer-based models, with 78% fewer
+parameters than the leading iTransformer.
 
 **Qualitative Comparison** 
 <img src="pics/qualitative.png" alt="at">
