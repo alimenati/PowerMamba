@@ -1,4 +1,4 @@
-# <center>TimeMachine</center>
+# <center>PowerMamba</center>
 
 This repository contains the code and resources for the research project *"PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems."*
 
