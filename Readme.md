@@ -30,6 +30,13 @@ The results indicate that our model performs improves for all time series even t
 prediction error is reduced by 7%, despite the absence of external price predictions. 
 <div style="text-align: center; margin-top: 20px;">
     <img src="pics/parameters.png" alt="at">
+Fig. 5: MSE of all models for different prediction window
+sizes, with context length L = 240 and no external predictions.
+Fig. 6: The number of model parameters with and without
+external predictions, in log scale.
+
+
+    
     <img src="pics/context.png" alt="at">
 </div>
 
