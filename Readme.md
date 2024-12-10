@@ -9,8 +9,17 @@ We release a comprehensive dataset for the Electric Reliability Council of Texas
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
 
+**Left** PowerMamba architecture. The model uses dynamic time series
+decomposition to separate seasonal and trend components and
+applies linear projections to maintain a fixed size. Parallel
+normal and inverse Mamba blocks enable dual tokenization,
+capturing intra-series and inter-series dependencies.
 
-
+**Right** Average Mean Squared Error (MSE) comparison
+between PowerMamba and state-of-the-art baselines with a
+context length of 240 hours and a 24-hour prediction window.
+The circle center represents the maximum possible error, and
+closer to the boundary indicates better performance.
 
 PowerMamba outperforms current benchmarks in all prediction tasks. We propose a time series processing block that seamlessly integrates high-resolution external forecasts into our models and other sequence-to-sequence frameworks. This module improves forecasting capabilities without substantially increasing the model size or diminishing the resolution and accuracy of external forecasts. We evaluate its effectiveness by considering two scenarios: first, we train with historical data alone, and then we incorporate external forecasts and compare the results. The following Table shows the prediction results for the case without external predictions.
 
