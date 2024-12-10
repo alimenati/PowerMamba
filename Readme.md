@@ -1,18 +1,17 @@
-
-# PowerMamba: A Deep State Space Model and Benchmark for Time Series Prediction in Electric Power Systems
+# <center>PowerMamba</center>
 
 This repository contains the code and resources for the research project *"PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems."*
 
 Our main proposal and the performance are shown in the next two figures:
 
 <div style="text-align: center;">
-    <img src="model.png" alt="PowerMamba Model" style="width:400px; height:400px;">
-    <p>PowerMamba Model: A Deep State Space Model for time series prediction.</p>
+    <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
-
+<img src="pics/without_pred.png" alt="Prediction results without external forecasts">
+<img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
 <div style="text-align: center; margin-top: 20px;">
-    <img src="performance.png" alt="Performance Results" style="width:400px; height:200px;">
-    <p>Performance Results: Demonstrates the main results of the PowerMamba model on a power grid dataset, in the case where an external dataset is not incorporated.</p>
+    <img src="pics/parameters.png" alt="at">
+    <img src="pics/context.png" alt="at">
 </div>
 
 
@@ -34,7 +33,33 @@ conda activate mamba4ts
 Each folder contains a `README` file with more details about its contents.
 
 # Maintainers
-* [Ali Menati](github.com/alimenati)
+* [Ali Menati](https://scholar.google.com/citations?user=HPreuloAAAAJ&hl=en&oi=ao)
 * [Fatemeh Doudi](https://fatemehdoudi.github.io/)
+
+
+
+## Acknowledgement
+
+We appreciate the following github repos very much for the valuable code base:
+- Mamba (https://github.com/state-spaces/mamba)
+- Time-Series-Library (https://github.com/thuml/Time-Series-Library)
+- TimeMachine (https://github.com/Atik-Ahamed/TimeMachine)
+- PatchTST (https://github.com/yuqinie98/PatchTST)
+- iTransformer (https://github.com/thuml/iTransformer)
+- Autoformer (https://github.com/thuml/Autoformer)
+- TimesNet (https://github.com/thuml/TimesNet)
+- DLinear (https://github.com/cure-lab/LTSF-Linear)
+
+# Citation
+
+If you find our codebase, dataset, or research valuable, please cite PowerMamba:
+
+```
+@misc{menati2024powermamba,      title={PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems}, 
+      author={Ali Menati and Fatemeh Doudi and Dileep Kalathil and Le Xie},      year={2024},
+      eprint={2412.06112},      archivePrefix={arXiv},
+      primaryClass={cs.LG},      url={https://arxiv.org/abs/2412.06112}, 
+}
+```
 
 
