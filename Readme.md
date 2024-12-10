@@ -9,11 +9,11 @@ We release a comprehensive dataset for the Electric Reliability Council of Texas
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
 
-**Left Figure)**PowerMamba architecture. The model uses dynamic time series
+**Left Figure**)PowerMamba architecture. The model uses dynamic time series
 decomposition to separate seasonal and trend components and
 applies linear projections to maintain a fixed size. Parallel
 normal and inverse Mamba blocks enable dual tokenization,
-capturing intra-series and inter-series dependencies. **Right Figure)**Average Mean Squared Error (MSE) comparison
+capturing intra-series and inter-series dependencies. **Right Figure**)Average Mean Squared Error (MSE) comparison
 between PowerMamba and state-of-the-art baselines with a
 context length of 240 hours and a 24-hour prediction window.
 The circle center represents the maximum possible error, and
