@@ -45,18 +45,14 @@ parameters than the leading iTransformer.
 <img src="pics/qualitative.png" alt="at">
 
 The ground truth and 24-hour predictions of load and price by PowerMamba and TimeMachine for a fixed context size
-of L = 240.
-
-Our model effectively captures the trend and provides predictions closest to the ground truth. 
+of L = 240. Our model effectively captures the trend and provides predictions closest to the ground truth. 
 
 
 <img src="pics/context.png" alt="at">
 </div>
 
 The impact of context size on the MSE of PowerMamba and TimeMachine (the second-best performing model) for a
-24-hour prediction window. **Left Figure**) Without external prediction. **Right Figure**) With external prediction.
-
-It can be seen that the accuracy of our models consistently improves with longer context sizes.
+24-hour prediction window. **Left Figure**) Without external prediction. **Right Figure**) With external prediction. It can be seen that the accuracy of our models consistently improves with longer context sizes.
 
 ## Getting Started
 
