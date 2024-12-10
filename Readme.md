@@ -29,6 +29,8 @@ Next, we integrate the external predictions provided for load and renewable gene
 The results indicate that our model's performance improves for all time series even those without external predictions. For example, price
 prediction error is reduced by 7%, despite the absence of external price predictions.
 
+
+
 **Computational Efficiency:**
 PowerMamba enhances the average prediction error of TimeMachine by 7% while employing 43% fewer parameters,
 thereby highlighting its superiority over this state-of-the-art
