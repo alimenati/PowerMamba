@@ -6,14 +6,12 @@ Our main proposal and the performance are shown in the next two figures:
 
 <div style="text-align: center;">
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
-    <p>PowerMamba Model: A Deep State Space Model for time series prediction.</p>
 </div>
 <img src="pics/without_pred.png" alt="Prediction results without external forecasts">
 <img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
 <div style="text-align: center; margin-top: 20px;">
     <img src="pics/parameters.png" alt="at">
     <img src="pics/context.png" alt="at">
-    <p>Performance Results: Demonstrates the main results of the PowerMamba model on a power grid dataset, in the case where an external dataset is not incorporated.</p>
 </div>
 
 
