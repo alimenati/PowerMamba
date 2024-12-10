@@ -9,9 +9,6 @@ The architecture and performance of our prediction model are presented in the fo
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
 
-<p style="font-family: 'Times New Roman', serif;">This text will appear in Times New Roman.</p>
-
-
 PowerMamba outperforms current benchmarks in all prediction tasks. 
 
 <img src="pics/without_pred.png" alt="Prediction results without external forecasts">
