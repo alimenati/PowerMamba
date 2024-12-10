@@ -8,7 +8,9 @@ The architecture and performance of our prediction model are presented in the fo
 <div style="text-align: center;">
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
-<p style="font-family: Times New Roman; font-size: 16px;">This text will appear in Arial font.</p>
+
+<p style="font-family: 'Times New Roman', serif;">This text will appear in Times New Roman.</p>
+
 
 PowerMamba outperforms current benchmarks in all prediction tasks, including 
 
