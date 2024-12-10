@@ -14,7 +14,6 @@ The architecture and performance of our prediction model are presented in the fo
 
 PowerMamba outperforms current benchmarks in all prediction tasks. 
 
-
 <img src="pics/without_pred.png" alt="Prediction results without external forecasts">
 <img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
 <div style="text-align: center; margin-top: 20px;">
