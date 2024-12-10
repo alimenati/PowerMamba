@@ -8,6 +8,16 @@ The architecture and performance of our prediction model are presented in the fo
 <div style="text-align: center;">
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
+
+PowerMamba outperforms current benchmarks in all prediction tasks, including 
+
+. Additionally, we provide
+an open-access toolbox that incorporates PowerMamba
+alongside other state-of-the-art machine learning models,
+thereby enabling benchmarking across a wide range of
+tasks for both short- and long-term forecasting.
+
+
 <img src="pics/without_pred.png" alt="Prediction results without external forecasts">
 <img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
 <div style="text-align: center; margin-top: 20px;">
