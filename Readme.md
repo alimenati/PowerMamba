@@ -44,6 +44,12 @@ parameters than the leading iTransformer.
 
 <img src="pics/qualitative.png" alt="at">
 
+The ground truth and 24-hour predictions of load and price by PowerMamba and TimeMachine for a fixed context size
+of L = 240. **Left Figure** ) Load. **Right Figure**) Price.
+
+Our model effectively captures the trend and provides predictions closest to the ground truth.
+
+
 <img src="pics/context.png" alt="at">
 </div>
 
