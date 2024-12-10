@@ -99,6 +99,13 @@ We appreciate the following github repos very much for the valuable code base:
 - TimesNet (https://github.com/thuml/TimesNet)
 - DLinear (https://github.com/cure-lab/LTSF-Linear)
 
+
+
+## Contact
+
+If you have any questions or concerns, please contact us: menati@tamu.edu or fatemehdoudi@tamu.edu or submit an issue.
+
+
 ## Citation
 
 If you find our codebase, dataset, or research valuable, please cite PowerMamba:
@@ -110,10 +117,6 @@ If you find our codebase, dataset, or research valuable, please cite PowerMamba:
       primaryClass={cs.LG},      url={https://arxiv.org/abs/2412.06112}, 
 }
 ```
-
-## Maintainers
-* [Ali Menati](https://scholar.google.com/citations?user=HPreuloAAAAJ&hl=en&oi=ao)
-* [Fatemeh Doudi](https://fatemehdoudi.github.io/)
 
 
 
