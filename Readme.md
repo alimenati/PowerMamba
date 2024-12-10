@@ -61,7 +61,10 @@ The ground truth and 24-hour predictions of load and price by PowerMamba and Tim
 of L = 240. Our model effectively captures the trend and provides predictions closest to the ground truth. 
 
 
-**Context Window Size:** 
+**Context Window Size:** In this part, we investigate
+the influence of varying context window sizes to determine the
+extent to which increased contextual information affects model
+performance.
 
 <img src="pics/context.png" alt="at">
 </div>
