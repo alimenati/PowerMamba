@@ -4,6 +4,7 @@ This repository contains the code and resources for the research project *"Power
 
 The architecture and performance of our prediction model are presented in the following figures:
 
+
 <div style="text-align: center;">
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
