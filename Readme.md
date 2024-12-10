@@ -41,11 +41,11 @@ thereby highlighting its superiority over this state-of-the-art
 Mamba-based model. Furthermore, PowerMamba is considerably smaller than Transformer-based models, with 78% fewer
 parameters than the leading iTransformer.
 
+**Qualitative Comparison** 
 <img src="pics/qualitative.png" alt="at">
 
 The ground truth and 24-hour predictions of load and price by PowerMamba and TimeMachine for a fixed context size
 of L = 240. Our model effectively captures the trend and provides predictions closest to the ground truth. 
-
 
 <img src="pics/context.png" alt="at">
 </div>
