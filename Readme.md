@@ -41,14 +41,14 @@ Each folder contains a `README` file with more details about its contents.
 ## Acknowledgement
 
 We appreciate the following github repos very much for the valuable code base:
-
+- Mamba (https://github.com/state-spaces/mamba)
+- Time-Series-Library (https://github.com/thuml/Time-Series-Library)
 - TimeMachine (https://github.com/Atik-Ahamed/TimeMachine)
 - PatchTST (https://github.com/yuqinie98/PatchTST)
 - iTransformer (https://github.com/thuml/iTransformer)
 - Autoformer (https://github.com/thuml/Autoformer)
 - TimesNet (https://github.com/thuml/TimesNet)
 - DLinear (https://github.com/cure-lab/LTSF-Linear)
-- Time-Series-Library (https://github.com/thuml/Time-Series-Library)
 
 # Citation
 
