@@ -60,6 +60,9 @@ alignment, especially around peaks and troughs.
 The ground truth and 24-hour predictions of load and price by PowerMamba and TimeMachine for a fixed context size
 of L = 240. Our model effectively captures the trend and provides predictions closest to the ground truth. 
 
+
+**Context Window Size:** 
+
 <img src="pics/context.png" alt="at">
 </div>
 
