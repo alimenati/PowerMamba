@@ -12,13 +12,7 @@ The architecture and performance of our prediction model are presented in the fo
 <p style="font-family: 'Times New Roman', serif;">This text will appear in Times New Roman.</p>
 
 
-PowerMamba outperforms current benchmarks in all prediction tasks, including 
-
-. Additionally, we provide
-an open-access toolbox that incorporates PowerMamba
-alongside other state-of-the-art machine learning models,
-thereby enabling benchmarking across a wide range of
-tasks for both short- and long-term forecasting.
+PowerMamba outperforms current benchmarks in all prediction tasks. 
 
 
 <img src="pics/without_pred.png" alt="Prediction results without external forecasts">
