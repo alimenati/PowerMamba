@@ -35,7 +35,7 @@ conda activate mamba4ts
 Each folder contains a `README` file with more details about its contents.
 
 # Maintainers
-* [Ali Menati](github.com/alimenati)
+* [Ali Menati](https://scholar.google.com/citations?user=HPreuloAAAAJ&hl=en&oi=ao)
 * [Fatemeh Doudi](https://fatemehdoudi.github.io/)
 
 
