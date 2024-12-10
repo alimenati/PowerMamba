@@ -70,12 +70,6 @@ conda activate mamba4ts
 
 Each folder contains a `README` file with more details about its contents.
 
-# Maintainers
-* [Ali Menati](https://scholar.google.com/citations?user=HPreuloAAAAJ&hl=en&oi=ao)
-* [Fatemeh Doudi](https://fatemehdoudi.github.io/)
-
-
-
 ## Acknowledgement
 
 We appreciate the following github repos very much for the valuable code base:
@@ -88,7 +82,7 @@ We appreciate the following github repos very much for the valuable code base:
 - TimesNet (https://github.com/thuml/TimesNet)
 - DLinear (https://github.com/cure-lab/LTSF-Linear)
 
-# Citation
+## Citation
 
 If you find our codebase, dataset, or research valuable, please cite PowerMamba:
 
@@ -99,5 +93,11 @@ If you find our codebase, dataset, or research valuable, please cite PowerMamba:
       primaryClass={cs.LG},      url={https://arxiv.org/abs/2412.06112}, 
 }
 ```
+
+## Maintainers
+* [Ali Menati](https://scholar.google.com/citations?user=HPreuloAAAAJ&hl=en&oi=ao)
+* [Fatemeh Doudi](https://fatemehdoudi.github.io/)
+
+
 
 
