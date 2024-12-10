@@ -28,8 +28,12 @@ Next, we integrate the external predictions provided for load and renewable gene
 <img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
 The results indicate that our model's performance improves for all time series even those without external predictions. For example, price
 prediction error is reduced by 7%, despite the absence of external price predictions. 
+
+**Computational Efficiency:**)
 <div style="text-align: center; margin-top: 20px;">
     <img src="pics/parameters.png" alt="at">
+
+
 
 **Left Figure**) MSE of all models for different prediction window
 sizes, with context length L = 240 and no external predictions. **Right Figure**) The number of model parameters with and without
