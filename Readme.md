@@ -2,11 +2,21 @@
 
 This repository contains the code and resources for the research project *"PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems."*
 
-Our main proposal and the performance are shown in the next two figures:
+We release a comprehensive dataset for the Electric Reliability Council of Texas (ERCOT) grid, which includes zonal loads, zonal electricity prices, ancillary service prices, and renewable generation time series with hourly granularity. This dataset spans five years and provides zonal-level spatial resolution, featuring 22 core time series and an extended version with 262 channels that includes external forecasts. The architecture and performance of our prediction model are presented in the following figures:
+
 
 <div style="text-align: center;">
     <img src="pics/PowerMamba_arc.png" alt="PowerMamba Model">
 </div>
+
+
+
+
+PowerMamba outperforms current benchmarks in all prediction tasks. We propose a time series processing block that seamlessly integrates high-resolution external forecasts into our models and other sequence-to-sequence frameworks. This module improves forecasting capabilities without substantially increasing the model size or diminishing the resolution and accuracy of external forecasts. We evaluate its effectiveness by considering two scenarios: first, we train with historical data alone, and then we incorporate external forecasts and compare the results. The following Table shows the prediction results for the case without external predictions.
+
+
+
+
 <img src="pics/without_pred.png" alt="Prediction results without external forecasts">
 <img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
 <div style="text-align: center; margin-top: 20px;">
