@@ -6,12 +6,14 @@ This repository contains the code and resources for the research project *"Power
 Our main proposal and the performance are shown in the next two figures:
 
 <div style="text-align: center;">
-    <img src="model.png" alt="PowerMamba Model" style="width:400px; height:400px;">
+    <img src="PowerMamba_arc.png" alt="PowerMamba Model">
     <p>PowerMamba Model: A Deep State Space Model for time series prediction.</p>
 </div>
-
+<img src="without_pred.png" alt="Prediction results without external forecasts">
+<img src="With_pred.png" alt="Comparing prediction results with and without external forecasts">
 <div style="text-align: center; margin-top: 20px;">
-    <img src="performance.png" alt="Performance Results" style="width:400px; height:200px;">
+    <img src="parameters.png" alt="at">
+    <img src="context.png" alt="at">
     <p>Performance Results: Demonstrates the main results of the PowerMamba model on a power grid dataset, in the case where an external dataset is not incorporated.</p>
 </div>
 
