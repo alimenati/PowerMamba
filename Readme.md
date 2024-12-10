@@ -36,6 +36,20 @@ Each folder contains a `README` file with more details about its contents.
 * [Ali Menati](https://scholar.google.com/citations?user=HPreuloAAAAJ&hl=en&oi=ao)
 * [Fatemeh Doudi](https://fatemehdoudi.github.io/)
 
+
+
+## Acknowledgement
+
+We appreciate the following github repos very much for the valuable code base:
+
+- TimeMachine (https://github.com/Atik-Ahamed/TimeMachine)
+- PatchTST (https://github.com/yuqinie98/PatchTST)
+- iTransformer (https://github.com/thuml/iTransformer)
+- Autoformer (https://github.com/thuml/Autoformer)
+- TimesNet (https://github.com/thuml/TimesNet)
+- DLinear (https://github.com/cure-lab/LTSF-Linear)
+- Time-Series-Library (https://github.com/thuml/Time-Series-Library)
+
 # Citation
 
 If you find our codebase, dataset, or research valuable, please cite PowerMamba:
