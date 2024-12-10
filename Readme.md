@@ -35,7 +35,15 @@ prediction error is reduced by 7%, despite the absence of external price predict
 sizes, with context length L = 240 and no external predictions. **Right Figure**) The number of model parameters with and without
 external predictions, in log scale.
 
+PowerMamba enhances the prediction accuracy of
+TimeMachine by 7% while employing 43% fewer parameters,
+thereby highlighting its superiority over this state-of-the-art
+Mamba-based model. Furthermore, PowerMamba is consider-
+ably smaller than Transformer-based models, with 78% fewer
+parameters than the leading iTransformer.
+
 <img src="pics/qualitative.png" alt="at">
+
 <img src="pics/context.png" alt="at">
 </div>
 
