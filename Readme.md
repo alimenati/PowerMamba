@@ -27,7 +27,7 @@ closer to the boundary indicates better performance. PowerMamba outperforms curr
 
 **Results with Integrating Externla Forecasts:** Next, we integrate the external predictions provided for load and renewable generation into our dataset. The following Table compares the prediction accuracy of our model and the baselines with and without external predictions. A fixed context size of L = 240 and a prediction window size of W = 24 are used for all the baselines.
 
-<img src="pics/With_pred.png" alt="Comparing prediction results with and without external forecasts">
+<img src="pics/with_pred.png" alt="Comparing prediction results with and without external forecasts">
 
 
 The results indicate that our model's performance improves for all time series even those without external predictions. For example, price
