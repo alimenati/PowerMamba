@@ -41,11 +41,9 @@ class Model(torch.nn.Module):
     def __init__(self,configs):
         super(Model, self).__init__()
         self.configs=configs
-        self.project_dict = self.configs.project_dict
-        self.num_new_col = len(self.project_dict)
-
-        
         if self.configs.include_pred==1:
+            self.project_dict = self.configs.project_dict
+            self.num_new_col = len(self.project_dict)
             self.configs.enc_in = self.configs.enc_in+self.num_new_col
             self.lin1=torch.nn.Linear(2*(self.configs.seq_len+self.configs.pred_len),self.configs.seq_len)
             
@@ -66,10 +64,7 @@ class Model(torch.nn.Module):
         self.mamba2 = Mamba(d_model=self.configs.enc_in,d_state=self.configs.d_state,d_conv=self.configs.dconv,
                             expand = self.configs.e_fact)
 
-        
-
     def forward(self, x):
-
         if self.configs.include_pred==1:
             zeros = x[:, -self.configs.pred_len:, :]
             x_pred = torch.cat((x, zeros), dim=1)
@@ -80,8 +75,8 @@ class Model(torch.nn.Module):
                 proj_from = value[1]-1 
                 data = x[:, -1, proj_from:proj_from + self.configs.pred_len]
                 x_pred[:, -self.configs.pred_len:, proj_to] = data
-                x_pred[:, :self.configs.seq_len, -self.configs.c_out-k]=x_pred[:, -self.configs.seq_len:, proj_to]
-                x_pred[:, -self.configs.pred_len:, -self.configs.c_out-k]=data
+                x_pred[:, :self.configs.seq_len, -self.configs.c_out-k+1]=x_pred[:, -self.configs.seq_len:, proj_to]
+                x_pred[:, -self.configs.pred_len:, -self.configs.c_out-k+1]=data
 
             x = x_pred[: , : , -self.configs.c_out-self.num_new_col:]
             x = self.revin_layer_enc(x, 'norm')
