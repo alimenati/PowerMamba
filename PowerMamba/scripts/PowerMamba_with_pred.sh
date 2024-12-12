@@ -53,7 +53,6 @@ python -u run_longExp.py \
 --dropout 0.5 \
 --revin 1 \
 --ch_ind 0 \
---residual 1 \
 --individual 0 \
 --dconv 2 \
 --d_state 256 \
