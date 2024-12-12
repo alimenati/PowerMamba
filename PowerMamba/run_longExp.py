@@ -16,7 +16,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Time Series Forecasting')
 
     # RANDOM SEED
-    parser.add_argument('--random_seed', type=int, default=2021, help='random seed')
+    parser.add_argument('--random_seed', type=int, default=2024, help='random seed')
 
     # BASIC CONFIG
     parser.add_argument('--is_training', type=int, required=True, default=1, help='status')
@@ -34,8 +34,8 @@ if __name__ == '__main__':
     parser.add_argument('--features', type=str, default='M',
                         help='forecasting task, options:[M, S, MS, Mm]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
 
-    parser.add_argument('--n_pred_col', type=int, default='1',
-                        help='#column for prediction')
+    # parser.add_argument('--n_pred_col', type=int, default='1',
+    #                     help='#column for prediction')
     
     parser.add_argument('--target', type=str, default='OT', help='target feature in S or MS task')
     parser.add_argument('--freq', type=str, default='h',
@@ -126,11 +126,12 @@ if __name__ == '__main__':
         datapath = args.root_path+'/'+args.data_path
         df = pd.read_csv(datapath)
         args.target = df.columns[-args.c_out:].tolist()
-        
     package_path = 'scripts.dictionaries'
     dict_module = importlib.import_module(f'{package_path}.{args.data_path}'.replace('.csv', ''))
     args.project_dict = dict_module.project_dict
     args.col_info_dict = dict_module.col_info_dict
+    print(args.project_dict)
+    print(args.col_info_dict)
 
     # random seed
     fix_seed = args.random_seed
@@ -156,7 +157,7 @@ if __name__ == '__main__':
     if args.is_training:
         for ii in range(args.itr):
             # setting record of experiments
-            setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_n1{}_n2{}_dr{}_cin{}_rin{}_res{}_dst{}_dconv{}_efact{}_run_{}'.format(
+            setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_n1{}_n2{}_dr{}_cin{}_rin{}_res{}_dst{}_dconv{}_efact{}'.format(
                 args.model_id,
                 args.model,
                 args.model_id_name,
