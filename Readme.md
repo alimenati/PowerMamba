@@ -78,7 +78,7 @@ To set up the required environment, follow these steps:
 
 ```bash
 conda env create -f environment.yml
-conda activate mamba4ts
+conda activate PowerMamba
 ```
 
 ## Repository Overview
