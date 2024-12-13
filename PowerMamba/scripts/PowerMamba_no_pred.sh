@@ -1,10 +1,6 @@
 if [ ! -d "./logs" ]; then
     mkdir ./logs
 fi
-
-if [ ! -d "./logs" ]; then
-    mkdir ./logs
-fi
 if [ ! -d "./csv_results" ]; then
     mkdir ./csv_results
 fi
