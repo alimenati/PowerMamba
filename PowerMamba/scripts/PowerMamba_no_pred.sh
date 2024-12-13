@@ -18,7 +18,7 @@ features=Mm
 c_out=22
 include_pred=0
 target_name=0 # only important in features = 'S' mode!
-model_id_name=price
+model_id_name=gridset
 data_name=custom
 
 
