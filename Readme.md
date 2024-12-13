@@ -112,10 +112,11 @@ If you have any questions or concerns, please contact us: menati@tamu.edu or fat
 If you find our codebase, dataset, or research valuable, please cite PowerMamba:
 
 ```
-@misc{menati2024powermamba,      title={PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems}, 
-      author={Ali Menati and Fatemeh Doudi and Dileep Kalathil and Le Xie},      year={2024},
-      eprint={2412.06112},      archivePrefix={arXiv},
-      primaryClass={cs.LG},      url={https://arxiv.org/abs/2412.06112}, 
+@article{menati2024powermamba,
+  title={PowerMamba: A Deep State Space Model and Comprehensive Benchmark for Time Series Prediction in Electric Power Systems},
+  author={Menati, Ali and Doudi, Fatemeh and Kalathil, Dileep and Xie, Le},
+  journal={arXiv preprint arXiv:2412.06112},
+  year={2024}
 }
 ```
 
