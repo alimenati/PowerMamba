@@ -1,4 +1,4 @@
-name: mamba4ts
+name: PowerMamba
 channels:
   - defaults
   - nvidia
