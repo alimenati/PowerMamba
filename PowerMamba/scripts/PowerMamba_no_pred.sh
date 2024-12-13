@@ -17,7 +17,7 @@ fi
 
 model_name=PowerMamba
 root_path_name=../data/
-data_path_name=price_no_pred.csv
+data_path_name=GridSet_no_pred.csv
 features=Mm
 c_out=22
 include_pred=0
