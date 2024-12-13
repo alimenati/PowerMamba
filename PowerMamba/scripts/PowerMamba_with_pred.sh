@@ -13,12 +13,12 @@ fi
 
 model_name=PowerMamba
 root_path_name=../data/
-data_path_name=price_with_pred.csv
+data_path_name=GridSet_with_pred.csv
 features=Mm
 c_out=22
 include_pred=1
 target_name=0 # only important in features = 'S' mode!
-model_id_name=price
+model_id_name=gridset
 data_name=custom
 
 
