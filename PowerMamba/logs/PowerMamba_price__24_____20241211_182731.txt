@@ -1,0 +1,514 @@
+{'COAST': [241, 97], 'NCENT': [245, 25], 'FWEST': [243, 73], 'EAST': [242, 49], 'SOUTH': [246, 169], 'SOLAR': [254, 193], 'NORTH': [244, 1], 'WEST': [248, 145], 'WIND': [253, 217], 'SCENT': [247, 121]}
+{'anc_serv': [-14, 4], 'price': [-8, 8], 'wind': [-10, 1], 'solar': [-9, 1], 'load': [-22, 8]}
+Args in experiment:
+Namespace(random_seed=2024, is_training=1, model_id='price__24', model='PowerMamba', model_id_name='price_with_pred', data='custom', project_dict={'COAST': [241, 97], 'NCENT': [245, 25], 'FWEST': [243, 73], 'EAST': [242, 49], 'SOUTH': [246, 169], 'SOLAR': [254, 193], 'NORTH': [244, 1], 'WEST': [248, 145], 'WIND': [253, 217], 'SCENT': [247, 121]}, col_info_dict={'anc_serv': [-14, 4], 'price': [-8, 8], 'wind': [-10, 1], 'solar': [-9, 1], 'load': [-22, 8]}, root_path='../data/', data_path='price_with_pred.csv', features='Mm', target=['COAST', 'EAST', 'FWEST', 'NORTH', 'NCENT', 'SOUTH', 'SCENT', 'WEST', 'REGDN', 'REGUP', 'RRS', 'NSPIN', 'WIND_ACTUAL_SYSTEM_WIDE', 'SOLAR_ACTUAL_SYSTEM_WIDE', 'LZ_AEN', 'LZ_CPS', 'LZ_HOUSTON', 'LZ_LCRA', 'LZ_NORTH', 'LZ_RAYBN', 'LZ_SOUTH', 'LZ_WEST'], freq='h', checkpoints='./checkpoints/', embed_type=0, dec_in=22, c_out=22, top_k=5, num_kernels=6, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, activation='gelu', output_attention=False, fc_dropout=0.2, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', subtract_last=0, affine=0, decomposition=0, kernel_size=7, individual=0, seq_len=240, label_len=48, pred_len=24, n1=256, n2=128, n_embed=300, revin=1, ch_ind=0, residual=1, d_state=256, dconv=2, e_fact=1, enc_in=22, dropout=0.5, embed='timeF', do_predict=False, num_workers=10, itr=1, train_epochs=50, batch_size=512, patience=100, learning_rate=0.001, des='Exp', loss='mse', lradj='5', pct_start=0.3, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False, include_pred=1)
+price__24_PowerMamba_price_with_pred_ftMm_sl240_ll48_pl24_n1256_n2128_dr300_cin0.5_rin0_res1_dst1_dconv256_efact2
+Use GPU: cuda:0
+>>>>>>>start training : price__24_PowerMamba_price_with_pred_ftMm_sl240_ll48_pl24_n1256_n2128_dr300_cin0.5_rin0_res1_dst1_dconv256_efact2>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 30413
+val 4361
+test 8741
+#total parameters: 841448
+Epoch: 1 cost time: 17.912973403930664
+Epoch: 1/50, Train Loss: 0.6374106, Validation Loss: 0.3223972, Test Loss: 0.4210134
+Epoch: 1, Steps: 59 | Train Loss: 0.6374106 Vali Loss: 0.3223972 Test Loss: 0.4210134
+FOR anc_serv:average loss is 0.029664309695363045
+FOR price:average loss is 0.16750018298625946
+FOR wind:average loss is 0.8677329421043396
+FOR solar:average loss is 3.508103609085083
+FOR load:average loss is 0.4284749925136566
+Validation loss decreased (inf --> 0.322397).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 2 cost time: 17.43398356437683
+Epoch: 2/50, Train Loss: 0.2544213, Validation Loss: 0.1077273, Test Loss: 0.1701224
+Epoch: 2, Steps: 59 | Train Loss: 0.2544213 Vali Loss: 0.1077273 Test Loss: 0.1701224
+FOR anc_serv:average loss is 0.02542245015501976
+FOR price:average loss is 0.13607890903949738
+FOR wind:average loss is 0.3708783984184265
+FOR solar:average loss is 0.8469464778900146
+FOR load:average loss is 0.16681833565235138
+Validation loss decreased (0.322397 --> 0.107727).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 3 cost time: 17.63186478614807
+Epoch: 3/50, Train Loss: 0.1408747, Validation Loss: 0.0795062, Test Loss: 0.1227746
+Epoch: 3, Steps: 59 | Train Loss: 0.1408747 Vali Loss: 0.0795062 Test Loss: 0.1227746
+FOR anc_serv:average loss is 0.021516278386116028
+FOR price:average loss is 0.11493567377328873
+FOR wind:average loss is 0.2808842957019806
+FOR solar:average loss is 0.4703359007835388
+FOR load:average loss is 0.11803387105464935
+Validation loss decreased (0.107727 --> 0.079506).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 4 cost time: 17.546133279800415
+Epoch: 4/50, Train Loss: 0.1136725, Validation Loss: 0.0699643, Test Loss: 0.1080910
+Epoch: 4, Steps: 59 | Train Loss: 0.1136725 Vali Loss: 0.0699643 Test Loss: 0.1080910
+FOR anc_serv:average loss is 0.01986764371395111
+FOR price:average loss is 0.1051596850156784
+FOR wind:average loss is 0.21654760837554932
+FOR solar:average loss is 0.39970484375953674
+FOR load:average loss is 0.10512518137693405
+Validation loss decreased (0.079506 --> 0.069964).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 5 cost time: 17.66019320487976
+Epoch: 5/50, Train Loss: 0.0966733, Validation Loss: 0.0620543, Test Loss: 0.0954458
+Epoch: 5, Steps: 59 | Train Loss: 0.0966733 Vali Loss: 0.0620543 Test Loss: 0.0954458
+FOR anc_serv:average loss is 0.01892695389688015
+FOR price:average loss is 0.10007836669683456
+FOR wind:average loss is 0.17347994446754456
+FOR solar:average loss is 0.3292910158634186
+FOR load:average loss is 0.09008762240409851
+Validation loss decreased (0.069964 --> 0.062054).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 6 cost time: 17.614928483963013
+Epoch: 6/50, Train Loss: 0.0862193, Validation Loss: 0.0604855, Test Loss: 0.0932646
+Epoch: 6, Steps: 59 | Train Loss: 0.0862193 Vali Loss: 0.0604855 Test Loss: 0.0932646
+FOR anc_serv:average loss is 0.018819620832800865
+FOR price:average loss is 0.09987152367830276
+FOR wind:average loss is 0.1549995243549347
+FOR solar:average loss is 0.30373358726501465
+FOR load:average loss is 0.0898546576499939
+Validation loss decreased (0.062054 --> 0.060486).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 7 cost time: 17.578397274017334
+Epoch: 7/50, Train Loss: 0.0767423, Validation Loss: 0.0566302, Test Loss: 0.0872762
+Epoch: 7, Steps: 59 | Train Loss: 0.0767423 Vali Loss: 0.0566302 Test Loss: 0.0872762
+FOR anc_serv:average loss is 0.018089737743139267
+FOR price:average loss is 0.09510728716850281
+FOR wind:average loss is 0.14276595413684845
+FOR solar:average loss is 0.292847216129303
+FOR load:average loss is 0.08140566200017929
+Validation loss decreased (0.060486 --> 0.056630).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 8 cost time: 17.79357361793518
+Epoch: 8/50, Train Loss: 0.0766771, Validation Loss: 0.0578721, Test Loss: 0.0877026
+Epoch: 8, Steps: 59 | Train Loss: 0.0766771 Vali Loss: 0.0578721 Test Loss: 0.0877026
+FOR anc_serv:average loss is 0.018377186730504036
+FOR price:average loss is 0.0955699160695076
+FOR wind:average loss is 0.13558931648731232
+FOR solar:average loss is 0.31132227182388306
+FOR load:average loss is 0.08055970817804337
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.001
+Epoch: 9 cost time: 17.586185455322266
+Epoch: 9/50, Train Loss: 0.0687978, Validation Loss: 0.0558620, Test Loss: 0.0838269
+Epoch: 9, Steps: 59 | Train Loss: 0.0687978 Vali Loss: 0.0558620 Test Loss: 0.0838269
+FOR anc_serv:average loss is 0.01822572946548462
+FOR price:average loss is 0.0934128388762474
+FOR wind:average loss is 0.12252430617809296
+FOR solar:average loss is 0.2751867175102234
+FOR load:average loss is 0.07828432321548462
+Validation loss decreased (0.056630 --> 0.055862).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 10 cost time: 17.649995803833008
+Epoch: 10/50, Train Loss: 0.0675774, Validation Loss: 0.0553115, Test Loss: 0.0821183
+Epoch: 10, Steps: 59 | Train Loss: 0.0675774 Vali Loss: 0.0553115 Test Loss: 0.0821183
+FOR anc_serv:average loss is 0.018206831067800522
+FOR price:average loss is 0.09277961403131485
+FOR wind:average loss is 0.11822134256362915
+FOR solar:average loss is 0.2650190591812134
+FOR load:average loss is 0.07603738456964493
+Validation loss decreased (0.055862 --> 0.055312).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 11 cost time: 17.566477060317993
+Epoch: 11/50, Train Loss: 0.0645516, Validation Loss: 0.0537789, Test Loss: 0.0809019
+Epoch: 11, Steps: 59 | Train Loss: 0.0645516 Vali Loss: 0.0537789 Test Loss: 0.0809019
+FOR anc_serv:average loss is 0.0181671641767025
+FOR price:average loss is 0.09195664525032043
+FOR wind:average loss is 0.11509300768375397
+FOR solar:average loss is 0.2686673700809479
+FOR load:average loss is 0.07346999645233154
+Validation loss decreased (0.055312 --> 0.053779).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 12 cost time: 17.747974157333374
+Epoch: 12/50, Train Loss: 0.0659823, Validation Loss: 0.0522186, Test Loss: 0.0803973
+Epoch: 12, Steps: 59 | Train Loss: 0.0659823 Vali Loss: 0.0522186 Test Loss: 0.0803973
+FOR anc_serv:average loss is 0.018278803676366806
+FOR price:average loss is 0.09203247725963593
+FOR wind:average loss is 0.11642251163721085
+FOR solar:average loss is 0.24794937670230865
+FOR load:average loss is 0.07437415421009064
+Validation loss decreased (0.053779 --> 0.052219).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 13 cost time: 17.558567762374878
+Epoch: 13/50, Train Loss: 0.0618397, Validation Loss: 0.0529589, Test Loss: 0.0811780
+Epoch: 13, Steps: 59 | Train Loss: 0.0618397 Vali Loss: 0.0529589 Test Loss: 0.0811780
+FOR anc_serv:average loss is 0.018476076424121857
+FOR price:average loss is 0.09240307658910751
+FOR wind:average loss is 0.11298534274101257
+FOR solar:average loss is 0.2744784355163574
+FOR load:average loss is 0.07316538691520691
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.001
+Epoch: 14 cost time: 17.702531814575195
+Epoch: 14/50, Train Loss: 0.0677466, Validation Loss: 0.0538989, Test Loss: 0.0806426
+Epoch: 14, Steps: 59 | Train Loss: 0.0677466 Vali Loss: 0.0538989 Test Loss: 0.0806426
+FOR anc_serv:average loss is 0.018383268266916275
+FOR price:average loss is 0.09237049520015717
+FOR wind:average loss is 0.12149017304182053
+FOR solar:average loss is 0.2477981001138687
+FOR load:average loss is 0.07404407858848572
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.001
+Epoch: 15 cost time: 17.886919021606445
+Epoch: 15/50, Train Loss: 0.0668997, Validation Loss: 0.0539459, Test Loss: 0.0802937
+Epoch: 15, Steps: 59 | Train Loss: 0.0668997 Vali Loss: 0.0539459 Test Loss: 0.0802937
+FOR anc_serv:average loss is 0.01824824884533882
+FOR price:average loss is 0.09194441139698029
+FOR wind:average loss is 0.11724264174699783
+FOR solar:average loss is 0.2549068033695221
+FOR load:average loss is 0.07322052121162415
+EarlyStopping counter: 3 out of 100
+Updating learning rate to 0.001
+Epoch: 16 cost time: 17.62639570236206
+Epoch: 16/50, Train Loss: 0.0594386, Validation Loss: 0.0516038, Test Loss: 0.0789544
+Epoch: 16, Steps: 59 | Train Loss: 0.0594386 Vali Loss: 0.0516038 Test Loss: 0.0789544
+FOR anc_serv:average loss is 0.01879100501537323
+FOR price:average loss is 0.0932779461145401
+FOR wind:average loss is 0.10674037784337997
+FOR solar:average loss is 0.23334680497646332
+FOR load:average loss is 0.0719403475522995
+Validation loss decreased (0.052219 --> 0.051604).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 17 cost time: 17.674429416656494
+Epoch: 17/50, Train Loss: 0.0580298, Validation Loss: 0.0528225, Test Loss: 0.0793293
+Epoch: 17, Steps: 59 | Train Loss: 0.0580298 Vali Loss: 0.0528225 Test Loss: 0.0793293
+FOR anc_serv:average loss is 0.01873900555074215
+FOR price:average loss is 0.09289919584989548
+FOR wind:average loss is 0.10711800307035446
+FOR solar:average loss is 0.23659509420394897
+FOR load:average loss is 0.07292263209819794
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.001
+Epoch: 18 cost time: 17.511793851852417
+Epoch: 18/50, Train Loss: 0.0591619, Validation Loss: 0.0530964, Test Loss: 0.0786916
+Epoch: 18, Steps: 59 | Train Loss: 0.0591619 Vali Loss: 0.0530964 Test Loss: 0.0786916
+FOR anc_serv:average loss is 0.018605783581733704
+FOR price:average loss is 0.09196315705776215
+FOR wind:average loss is 0.10373398661613464
+FOR solar:average loss is 0.23316486179828644
+FOR load:average loss is 0.07302358001470566
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.001
+Epoch: 19 cost time: 17.573743104934692
+Epoch: 19/50, Train Loss: 0.0558750, Validation Loss: 0.0511247, Test Loss: 0.0772338
+Epoch: 19, Steps: 59 | Train Loss: 0.0558750 Vali Loss: 0.0511247 Test Loss: 0.0772338
+FOR anc_serv:average loss is 0.018397679552435875
+FOR price:average loss is 0.09174979478120804
+FOR wind:average loss is 0.10573408007621765
+FOR solar:average loss is 0.2251460701227188
+FOR load:average loss is 0.07008441537618637
+Validation loss decreased (0.051604 --> 0.051125).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 20 cost time: 17.54063320159912
+Epoch: 20/50, Train Loss: 0.0544940, Validation Loss: 0.0512078, Test Loss: 0.0774121
+Epoch: 20, Steps: 59 | Train Loss: 0.0544940 Vali Loss: 0.0512078 Test Loss: 0.0774121
+FOR anc_serv:average loss is 0.01831604726612568
+FOR price:average loss is 0.09196249395608902
+FOR wind:average loss is 0.10283919423818588
+FOR solar:average loss is 0.2346554547548294
+FOR load:average loss is 0.06957583129405975
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.001
+Epoch: 21 cost time: 17.60951018333435
+Epoch: 21/50, Train Loss: 0.0546448, Validation Loss: 0.0502609, Test Loss: 0.0775756
+Epoch: 21, Steps: 59 | Train Loss: 0.0546448 Vali Loss: 0.0502609 Test Loss: 0.0775756
+FOR anc_serv:average loss is 0.018490266054868698
+FOR price:average loss is 0.09242436289787292
+FOR wind:average loss is 0.10438021272420883
+FOR solar:average loss is 0.22398348152637482
+FOR load:average loss is 0.07061800360679626
+Validation loss decreased (0.051125 --> 0.050261).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 22 cost time: 17.57256293296814
+Epoch: 22/50, Train Loss: 0.0538008, Validation Loss: 0.0515115, Test Loss: 0.0774489
+Epoch: 22, Steps: 59 | Train Loss: 0.0538008 Vali Loss: 0.0515115 Test Loss: 0.0774489
+FOR anc_serv:average loss is 0.018667951226234436
+FOR price:average loss is 0.09227153658866882
+FOR wind:average loss is 0.10195548832416534
+FOR solar:average loss is 0.22673054039478302
+FOR load:average loss is 0.07029309868812561
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.001
+Epoch: 23 cost time: 17.571183919906616
+Epoch: 23/50, Train Loss: 0.0516981, Validation Loss: 0.0494974, Test Loss: 0.0770413
+Epoch: 23, Steps: 59 | Train Loss: 0.0516981 Vali Loss: 0.0494974 Test Loss: 0.0770413
+FOR anc_serv:average loss is 0.018528910353779793
+FOR price:average loss is 0.09165612608194351
+FOR wind:average loss is 0.10090073943138123
+FOR solar:average loss is 0.23035508394241333
+FOR load:average loss is 0.06953608244657516
+Validation loss decreased (0.050261 --> 0.049497).  Saving model ...
+Updating learning rate to 0.001
+Epoch: 24 cost time: 17.46622633934021
+Epoch: 24/50, Train Loss: 0.0515673, Validation Loss: 0.0510093, Test Loss: 0.0775954
+Epoch: 24, Steps: 59 | Train Loss: 0.0515673 Vali Loss: 0.0510093 Test Loss: 0.0775954
+FOR anc_serv:average loss is 0.01867794431746006
+FOR price:average loss is 0.09302814304828644
+FOR wind:average loss is 0.10021495074033737
+FOR solar:average loss is 0.2225581407546997
+FOR load:average loss is 0.07067354023456573
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.001
+Epoch: 25 cost time: 17.59521174430847
+Epoch: 25/50, Train Loss: 0.0507542, Validation Loss: 0.0507845, Test Loss: 0.0772437
+Epoch: 25, Steps: 59 | Train Loss: 0.0507542 Vali Loss: 0.0507845 Test Loss: 0.0772437
+FOR anc_serv:average loss is 0.0187319777905941
+FOR price:average loss is 0.093901626765728
+FOR wind:average loss is 0.09945794939994812
+FOR solar:average loss is 0.21269625425338745
+FOR load:average loss is 0.07013335078954697
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.0001
+Epoch: 26 cost time: 17.629592657089233
+Epoch: 26/50, Train Loss: 0.0476778, Validation Loss: 0.0492372, Test Loss: 0.0745371
+Epoch: 26, Steps: 59 | Train Loss: 0.0476778 Vali Loss: 0.0492372 Test Loss: 0.0745371
+FOR anc_serv:average loss is 0.018490027636289597
+FOR price:average loss is 0.09201665222644806
+FOR wind:average loss is 0.0951801985502243
+FOR solar:average loss is 0.20326454937458038
+FOR load:average loss is 0.06640968471765518
+Validation loss decreased (0.049497 --> 0.049237).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 27 cost time: 17.791740894317627
+Epoch: 27/50, Train Loss: 0.0448110, Validation Loss: 0.0495880, Test Loss: 0.0742870
+Epoch: 27, Steps: 59 | Train Loss: 0.0448110 Vali Loss: 0.0495880 Test Loss: 0.0742870
+FOR anc_serv:average loss is 0.018461404368281364
+FOR price:average loss is 0.09158241003751755
+FOR wind:average loss is 0.09393133223056793
+FOR solar:average loss is 0.1971523016691208
+FOR load:average loss is 0.06709073483943939
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.0001
+Epoch: 28 cost time: 17.440959215164185
+Epoch: 28/50, Train Loss: 0.0442019, Validation Loss: 0.0488479, Test Loss: 0.0742273
+Epoch: 28, Steps: 59 | Train Loss: 0.0442019 Vali Loss: 0.0488479 Test Loss: 0.0742273
+FOR anc_serv:average loss is 0.0184794869273901
+FOR price:average loss is 0.09167952090501785
+FOR wind:average loss is 0.09346120059490204
+FOR solar:average loss is 0.19729678332805634
+FOR load:average loss is 0.06686095893383026
+Validation loss decreased (0.049237 --> 0.048848).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 29 cost time: 17.355512142181396
+Epoch: 29/50, Train Loss: 0.0438813, Validation Loss: 0.0489391, Test Loss: 0.0740930
+Epoch: 29, Steps: 59 | Train Loss: 0.0438813 Vali Loss: 0.0489391 Test Loss: 0.0740930
+FOR anc_serv:average loss is 0.01846185140311718
+FOR price:average loss is 0.09162478148937225
+FOR wind:average loss is 0.09333660453557968
+FOR solar:average loss is 0.1979229748249054
+FOR load:average loss is 0.06649266928434372
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.0001
+Epoch: 30 cost time: 17.508116483688354
+Epoch: 30/50, Train Loss: 0.0438410, Validation Loss: 0.0489425, Test Loss: 0.0741351
+Epoch: 30, Steps: 59 | Train Loss: 0.0438410 Vali Loss: 0.0489425 Test Loss: 0.0741351
+FOR anc_serv:average loss is 0.018508903682231903
+FOR price:average loss is 0.09179136157035828
+FOR wind:average loss is 0.09335748106241226
+FOR solar:average loss is 0.1952800303697586
+FOR load:average loss is 0.06674598902463913
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.0001
+Epoch: 31 cost time: 17.653079748153687
+Epoch: 31/50, Train Loss: 0.0435972, Validation Loss: 0.0486758, Test Loss: 0.0739102
+Epoch: 31, Steps: 59 | Train Loss: 0.0435972 Vali Loss: 0.0486758 Test Loss: 0.0739102
+FOR anc_serv:average loss is 0.018507225438952446
+FOR price:average loss is 0.09148630499839783
+FOR wind:average loss is 0.09342166781425476
+FOR solar:average loss is 0.19290170073509216
+FOR load:average loss is 0.06672264635562897
+Validation loss decreased (0.048848 --> 0.048676).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 32 cost time: 17.45166277885437
+Epoch: 32/50, Train Loss: 0.0435894, Validation Loss: 0.0490725, Test Loss: 0.0740517
+Epoch: 32, Steps: 59 | Train Loss: 0.0435894 Vali Loss: 0.0490725 Test Loss: 0.0740517
+FOR anc_serv:average loss is 0.018502313643693924
+FOR price:average loss is 0.09152927249670029
+FOR wind:average loss is 0.09322766214609146
+FOR solar:average loss is 0.19580508768558502
+FOR load:average loss is 0.06673260778188705
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.0001
+Epoch: 33 cost time: 17.5453941822052
+Epoch: 33/50, Train Loss: 0.0435185, Validation Loss: 0.0493744, Test Loss: 0.0738600
+Epoch: 33, Steps: 59 | Train Loss: 0.0435185 Vali Loss: 0.0493744 Test Loss: 0.0738600
+FOR anc_serv:average loss is 0.018516812473535538
+FOR price:average loss is 0.09161630272865295
+FOR wind:average loss is 0.0930376648902893
+FOR solar:average loss is 0.19608235359191895
+FOR load:average loss is 0.06610023975372314
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.0001
+Epoch: 34 cost time: 17.640567302703857
+Epoch: 34/50, Train Loss: 0.0432598, Validation Loss: 0.0493106, Test Loss: 0.0740122
+Epoch: 34, Steps: 59 | Train Loss: 0.0432598 Vali Loss: 0.0493106 Test Loss: 0.0740122
+FOR anc_serv:average loss is 0.01853690668940544
+FOR price:average loss is 0.09157605469226837
+FOR wind:average loss is 0.09296265989542007
+FOR solar:average loss is 0.19479922950267792
+FOR load:average loss is 0.0667189359664917
+EarlyStopping counter: 3 out of 100
+Updating learning rate to 0.0001
+Epoch: 35 cost time: 17.50449538230896
+Epoch: 35/50, Train Loss: 0.0432477, Validation Loss: 0.0488142, Test Loss: 0.0740361
+Epoch: 35, Steps: 59 | Train Loss: 0.0432477 Vali Loss: 0.0488142 Test Loss: 0.0740361
+FOR anc_serv:average loss is 0.01860293373465538
+FOR price:average loss is 0.09188608080148697
+FOR wind:average loss is 0.09301669150590897
+FOR solar:average loss is 0.1940537393093109
+FOR load:average loss is 0.06652779132127762
+EarlyStopping counter: 4 out of 100
+Updating learning rate to 0.0001
+Epoch: 36 cost time: 17.46569585800171
+Epoch: 36/50, Train Loss: 0.0429389, Validation Loss: 0.0487641, Test Loss: 0.0737910
+Epoch: 36, Steps: 59 | Train Loss: 0.0429389 Vali Loss: 0.0487641 Test Loss: 0.0737910
+FOR anc_serv:average loss is 0.018570376560091972
+FOR price:average loss is 0.09183480590581894
+FOR wind:average loss is 0.09279917180538177
+FOR solar:average loss is 0.19304035604000092
+FOR load:average loss is 0.06607531756162643
+EarlyStopping counter: 5 out of 100
+Updating learning rate to 0.0001
+Epoch: 37 cost time: 17.62581443786621
+Epoch: 37/50, Train Loss: 0.0424435, Validation Loss: 0.0490258, Test Loss: 0.0738411
+Epoch: 37, Steps: 59 | Train Loss: 0.0424435 Vali Loss: 0.0490258 Test Loss: 0.0738411
+FOR anc_serv:average loss is 0.01854635775089264
+FOR price:average loss is 0.09180593490600586
+FOR wind:average loss is 0.09280005842447281
+FOR solar:average loss is 0.1946905106306076
+FOR load:average loss is 0.06604757159948349
+EarlyStopping counter: 6 out of 100
+Updating learning rate to 0.0001
+Epoch: 38 cost time: 17.65811061859131
+Epoch: 38/50, Train Loss: 0.0425051, Validation Loss: 0.0488826, Test Loss: 0.0737919
+Epoch: 38, Steps: 59 | Train Loss: 0.0425051 Vali Loss: 0.0488826 Test Loss: 0.0737919
+FOR anc_serv:average loss is 0.018597831949591637
+FOR price:average loss is 0.09205621480941772
+FOR wind:average loss is 0.09254618734121323
+FOR solar:average loss is 0.19024595618247986
+FOR load:average loss is 0.06622368842363358
+EarlyStopping counter: 7 out of 100
+Updating learning rate to 0.0001
+Epoch: 39 cost time: 17.444238424301147
+Epoch: 39/50, Train Loss: 0.0425362, Validation Loss: 0.0486576, Test Loss: 0.0736089
+Epoch: 39, Steps: 59 | Train Loss: 0.0425362 Vali Loss: 0.0486576 Test Loss: 0.0736089
+FOR anc_serv:average loss is 0.01858348958194256
+FOR price:average loss is 0.0917297750711441
+FOR wind:average loss is 0.09273045510053635
+FOR solar:average loss is 0.19237582385540009
+FOR load:average loss is 0.0657646656036377
+Validation loss decreased (0.048676 --> 0.048658).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 40 cost time: 17.862485647201538
+Epoch: 40/50, Train Loss: 0.0422046, Validation Loss: 0.0480674, Test Loss: 0.0738078
+Epoch: 40, Steps: 59 | Train Loss: 0.0422046 Vali Loss: 0.0480674 Test Loss: 0.0738078
+FOR anc_serv:average loss is 0.01864214614033699
+FOR price:average loss is 0.09209222346544266
+FOR wind:average loss is 0.09238871186971664
+FOR solar:average loss is 0.19341996312141418
+FOR load:average loss is 0.06583217531442642
+Validation loss decreased (0.048658 --> 0.048067).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 41 cost time: 17.36546492576599
+Epoch: 41/50, Train Loss: 0.0422132, Validation Loss: 0.0487248, Test Loss: 0.0738547
+Epoch: 41, Steps: 59 | Train Loss: 0.0422132 Vali Loss: 0.0487248 Test Loss: 0.0738547
+FOR anc_serv:average loss is 0.018648900091648102
+FOR price:average loss is 0.09192924201488495
+FOR wind:average loss is 0.092609703540802
+FOR solar:average loss is 0.19696326553821564
+FOR load:average loss is 0.06565013527870178
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.0001
+Epoch: 42 cost time: 17.485471725463867
+Epoch: 42/50, Train Loss: 0.0420257, Validation Loss: 0.0480942, Test Loss: 0.0736747
+Epoch: 42, Steps: 59 | Train Loss: 0.0420257 Vali Loss: 0.0480942 Test Loss: 0.0736747
+FOR anc_serv:average loss is 0.018629804253578186
+FOR price:average loss is 0.09195783734321594
+FOR wind:average loss is 0.09217973053455353
+FOR solar:average loss is 0.19298803806304932
+FOR load:average loss is 0.06568682938814163
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.0001
+Epoch: 43 cost time: 17.516285181045532
+Epoch: 43/50, Train Loss: 0.0422986, Validation Loss: 0.0483730, Test Loss: 0.0738720
+Epoch: 43, Steps: 59 | Train Loss: 0.0422986 Vali Loss: 0.0483730 Test Loss: 0.0738720
+FOR anc_serv:average loss is 0.018721872940659523
+FOR price:average loss is 0.09209870547056198
+FOR wind:average loss is 0.09274480491876602
+FOR solar:average loss is 0.19151151180267334
+FOR load:average loss is 0.06615620106458664
+EarlyStopping counter: 3 out of 100
+Updating learning rate to 0.0001
+Epoch: 44 cost time: 17.487940311431885
+Epoch: 44/50, Train Loss: 0.0418643, Validation Loss: 0.0482948, Test Loss: 0.0735827
+Epoch: 44, Steps: 59 | Train Loss: 0.0418643 Vali Loss: 0.0482948 Test Loss: 0.0735827
+FOR anc_serv:average loss is 0.018693670630455017
+FOR price:average loss is 0.09198881685733795
+FOR wind:average loss is 0.09227091819047928
+FOR solar:average loss is 0.1891857534646988
+FOR load:average loss is 0.06583463400602341
+EarlyStopping counter: 4 out of 100
+Updating learning rate to 0.0001
+Epoch: 45 cost time: 17.58212971687317
+Epoch: 45/50, Train Loss: 0.0415984, Validation Loss: 0.0479478, Test Loss: 0.0737475
+Epoch: 45, Steps: 59 | Train Loss: 0.0415984 Vali Loss: 0.0479478 Test Loss: 0.0737475
+FOR anc_serv:average loss is 0.018708989024162292
+FOR price:average loss is 0.09231729805469513
+FOR wind:average loss is 0.09212157875299454
+FOR solar:average loss is 0.1952345371246338
+FOR load:average loss is 0.06521438807249069
+Validation loss decreased (0.048067 --> 0.047948).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 46 cost time: 17.314865350723267
+Epoch: 46/50, Train Loss: 0.0415224, Validation Loss: 0.0483325, Test Loss: 0.0738649
+Epoch: 46, Steps: 59 | Train Loss: 0.0415224 Vali Loss: 0.0483325 Test Loss: 0.0738649
+FOR anc_serv:average loss is 0.018727976828813553
+FOR price:average loss is 0.09228464215993881
+FOR wind:average loss is 0.09195421636104584
+FOR solar:average loss is 0.1921493262052536
+FOR load:average loss is 0.06596684455871582
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.0001
+Epoch: 47 cost time: 17.638319730758667
+Epoch: 47/50, Train Loss: 0.0414077, Validation Loss: 0.0480491, Test Loss: 0.0736486
+Epoch: 47, Steps: 59 | Train Loss: 0.0414077 Vali Loss: 0.0480491 Test Loss: 0.0736486
+FOR anc_serv:average loss is 0.018706293776631355
+FOR price:average loss is 0.09221360087394714
+FOR wind:average loss is 0.09208264946937561
+FOR solar:average loss is 0.1921444833278656
+FOR load:average loss is 0.06543856859207153
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.0001
+Epoch: 48 cost time: 17.78520655632019
+Epoch: 48/50, Train Loss: 0.0412647, Validation Loss: 0.0478896, Test Loss: 0.0736743
+Epoch: 48, Steps: 59 | Train Loss: 0.0412647 Vali Loss: 0.0478896 Test Loss: 0.0736743
+FOR anc_serv:average loss is 0.01870284415781498
+FOR price:average loss is 0.09229631721973419
+FOR wind:average loss is 0.09215549379587173
+FOR solar:average loss is 0.19459058344364166
+FOR load:average loss is 0.06511327624320984
+Validation loss decreased (0.047948 --> 0.047890).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 49 cost time: 17.60757064819336
+Epoch: 49/50, Train Loss: 0.0412423, Validation Loss: 0.0480627, Test Loss: 0.0737470
+Epoch: 49, Steps: 59 | Train Loss: 0.0412423 Vali Loss: 0.0480627 Test Loss: 0.0737470
+FOR anc_serv:average loss is 0.018758190795779228
+FOR price:average loss is 0.09266563504934311
+FOR wind:average loss is 0.0921526551246643
+FOR solar:average loss is 0.1938352882862091
+FOR load:average loss is 0.06501096487045288
+EarlyStopping counter: 1 out of 100
+Updating learning rate to 0.0001
+Epoch: 50 cost time: 17.80839991569519
+Epoch: 50/50, Train Loss: 0.0410466, Validation Loss: 0.0483834, Test Loss: 0.0740201
+Epoch: 50, Steps: 59 | Train Loss: 0.0410466 Vali Loss: 0.0483834 Test Loss: 0.0740201
+FOR anc_serv:average loss is 0.01881645992398262
+FOR price:average loss is 0.09319277107715607
+FOR wind:average loss is 0.09189758449792862
+FOR solar:average loss is 0.1935160607099533
+FOR load:average loss is 0.06527764350175858
+EarlyStopping counter: 2 out of 100
+Updating learning rate to 0.0001
+>>>>>>>testing : price__24_PowerMamba_price_with_pred_ftMm_sl240_ll48_pl24_n1256_n2128_dr300_cin0.5_rin0_res1_dst1_dconv256_efact2<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 8741
+mse:0.07366887480020523, mae:0.12368996441364288, rse:0.21351195871829987
