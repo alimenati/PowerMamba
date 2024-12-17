@@ -70,7 +70,7 @@ performance.
 </div>
 
 The impact of context size on the MSE of PowerMamba and TimeMachine (the second-best performing model) for a
-24-hour prediction window. **Left Figure**) Without external prediction. **Right Figure**) With external prediction. It can be seen that the accuracy of our models consistently improves with longer context sizes.
+24-hour prediction window. **Left**) Without external prediction. **Right**) With external prediction. It can be seen that the accuracy of our models consistently improves with longer context sizes.
 
 ## Getting Started
 
