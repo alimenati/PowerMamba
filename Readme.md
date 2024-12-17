@@ -42,8 +42,8 @@ term predictions. We also compare the number of trainable parameters for all the
 <div style="text-align: center; margin-top: 20px;">
     <img src="pics/parameters.png" alt="at">
     
-**Left Figure**) MSE of all models for different prediction window
-sizes, with context length L = 240 and no external predictions. **Right Figure**) The number of model parameters with and without
+**Left**) MSE of all models for different prediction window
+sizes, with context length L = 240 and no external predictions. **Right**) The number of model parameters with and without
 external predictions, in log scale.
 
 PowerMamba enhances the average prediction error of TimeMachine by 7% while employing 43% fewer parameters,
