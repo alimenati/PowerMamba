@@ -1,25 +1,20 @@
 name: PowerMamba
 channels:
-  - defaults
   - nvidia
-  - "nvidia/label/cuda-11.8.0"
+  - nvidia/label/cuda-11.8.0
+  - defaults
 dependencies:
   - python=3.10.13
-  - cudatoolkit==11.8
-  - cuda-nvcc
+  - cudatoolkit=11.8
   - packaging
+  - numpy<2
+  - matplotlib
+  - pandas
+  - scikit-learn
   - pip
   - pip:
-    - torch==2.1.1
-    - torchvision==0.16.1
-    - torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
-    - causal-conv1d==1.2.0.post1
-    - mamba-ssm==1.2.0.post1
-    - coverage
-    - flake8
-    - isort
-    - black==23.7.0 
-    - flake8-bugbear
-    - flake8-comprehensions
-    - pre-commit>=2.9.3
-    - docformatter
+      - torch==2.1.1
+      - torchvision==0.16.1
+      - torchaudio==2.1.1
+      - causal-conv1d==1.2.0.post1
+      - mamba-ssm==1.2.0.post1
