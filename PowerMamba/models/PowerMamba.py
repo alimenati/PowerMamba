@@ -66,17 +66,17 @@ class Model(torch.nn.Module):
 
     def forward(self, x):
         if self.configs.include_pred==1:
-            zeros = x[:, -self.configs.pred_len:, :]
-            x_pred = torch.cat((x, zeros), dim=1)
+            extension = x[:, -self.configs.pred_len:, :]
+            x_pred = torch.cat((x, extension), dim=1)
             k=0
             for key, value in self.project_dict.items():
                 k=k+1
                 proj_to = value[0]-1 
                 proj_from = value[1]-1 
-                data = x[:, -1, proj_from:proj_from + self.configs.pred_len]
-                x_pred[:, -self.configs.pred_len:, proj_to] = data
+                external_prediction = x[:, -1, proj_from:proj_from + self.configs.pred_len]
+                x_pred[:, -self.configs.pred_len:, proj_to] = external_prediction
                 x_pred[:, :self.configs.seq_len, -self.configs.c_out-k+1]=x_pred[:, -self.configs.seq_len:, proj_to]
-                x_pred[:, -self.configs.pred_len:, -self.configs.c_out-k+1]=data
+                x_pred[:, -self.configs.pred_len:, -self.configs.c_out-k+1]= external_prediction
 
             x = x_pred[: , : , -self.configs.c_out-self.num_new_col:]
             x = self.revin_layer_enc(x, 'norm')
