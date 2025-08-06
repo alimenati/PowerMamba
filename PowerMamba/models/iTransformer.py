@@ -117,10 +117,10 @@ class Model(nn.Module):
 
             x = x_pred[: , : , -self.configs.c_out-self.num_new_col:]
             x = self.revin_layer_enc(x, 'norm')
-            seasonal_init, trend_init = self.decompsition(x)
+            seasonal_init, trend_init = self.decompsition_pred(x)
             x= torch.cat([seasonal_init, trend_init], dim=1)
             x = torch.permute(x, (0,2,1))
-            x = self.lin1(x)
+            x = self.lin1_enc(x)
             x = torch.permute(x, (0,2,1))
             x_enc = self.revin_layer_enc(x, 'denorm')
             
